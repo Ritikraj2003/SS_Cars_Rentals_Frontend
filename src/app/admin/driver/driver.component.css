@@ -1,0 +1,96 @@
+@media screen and (max-width: 576px) {
+  .table thead {
+    display: none;
+  }
+
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    width: 45%;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+}
+
+
+.form-container {
+  padding: 24px;
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form-field {
+  flex: 1 1 calc(50% - 8px);
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  flex: 1 1 100%;
+}
+
+input, textarea {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel {
+  background-color: #fff;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.save {
+  background-color: #3f51b5;
+  color: white;
+}
+

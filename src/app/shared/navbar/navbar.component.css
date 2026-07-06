@@ -1,0 +1,94 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dadada;
+  padding: 10px 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  cursor: pointer;
+}
+
+.logo-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin-left: 10px;
+  color: #f0f0f0;
+  cursor: default;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #3a3a5a;
+  color: #fff;
+}
+
+/* Active link styling when the router marks a link active */
+.nav-link.active {
+  background-color: #334078;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(51, 64, 120, 0.18);
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar-right {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 15px;
+  }
+
+  .navbar-right.active {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+}

@@ -1,0 +1,15 @@
+
+<div class="d-flex flex-column min-vh-100">
+  <!-- Optional Header -->
+  <app-navbar></app-navbar>
+
+  <!-- Main content -->
+  <main class="flex-fill">
+    <div [ngClass]="{'page-content-mt': !isHomePage()}">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>

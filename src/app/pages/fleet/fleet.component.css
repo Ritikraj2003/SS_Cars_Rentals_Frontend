@@ -1,0 +1,148 @@
+/* Section Titles */
+.section-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #222;
+}
+
+/* ===== HOW IT WORKS CARD ===== */
+.step-card {
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+.step-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+.step-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.step-number {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #f4c200;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== CARS AVAILABLE SECTION ===== */
+.car-list-section {
+  padding: 1rem;
+}
+
+/* Scroll wrapper with spacing */
+.car-scroll-wrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  overflow-y: hidden;
+}
+
+/* Add more spacing on large screens */
+@media (min-width: 1200px) {
+  .car-scroll-wrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Scroll only if more than 12 items */
+.scroll-enabled {
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.scroll-enabled::-webkit-scrollbar {
+  width: 8px;
+}
+.scroll-enabled::-webkit-scrollbar-thumb {
+  background-color: #ffc107;
+  border-radius: 4px;
+}
+
+/* Car Card Styling */
+.car-card {
+  border: none;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+.car-card:hover {
+     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: scale(1.03);
+}
+
+/* Card Image */
+.card-img-top {
+  height: 120px;
+  object-fit: contain;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .car-grid {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 1rem;
+  }
+
+  .car-grid > div {
+    flex: 0 0 auto;
+    width: 75%;
+    max-width: 280px;
+  }
+
+  .car-grid::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .car-grid::-webkit-scrollbar-thumb {
+    background-color: #ffc107;
+    border-radius: 4px;
+  }
+
+  .card-img-top {
+    height: 100px;
+  }
+
+  .card-body {
+    padding: 0.75rem 1rem;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 80px;
+  }
+}
+.tariff-card {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.car-title {
+  font-size: 1.5rem;
+}
+.card-title {
+  font-size: 14px;
+ font-weight: bold;
+}
+.card-text {
+  font-size: 13px;
+  font-weight: bold;
+  color: black;
+}
+.famlity-font {
+  font-family: 'Roboto', sans-serif;
+}

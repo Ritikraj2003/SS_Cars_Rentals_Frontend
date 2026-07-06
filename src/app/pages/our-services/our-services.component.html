@@ -1,0 +1,140 @@
+
+
+
+<section class="tariff-main-section">
+  <h2 class="tariff-title tariff-title-center">Tariff Chart and Rates</h2>
+  <section class="local-package-section d-flex">
+    <div class="tariff-section tariff-section-inline">
+      <h2 class="tariff-subtitle">Drop Trips and Round Trips</h2>
+      <p class="tariff-desc">
+        Drop Taxi Provides drop trips and round trips all across Tamilnadu, Pondicherry, Karnataka, Kerala & Andhra Pradesh. Conventionally, all taxis charge two-way fare (up and down) even for drop trips on the pretext they return empty on the return journey. But here in Drop Taxi, we are transparent on our pricing and 100% guarantee no hidden charges.
+      </p>
+      <p class="tariff-note"><b>Below are the rates & Terms and Conditions for different type of vehicles.</b></p>
+      <div class="tariff-table-wrapper">
+        <table class="tariff-table">
+          <thead>
+            <tr>
+              <th>VEHICLE TYPE</th>
+              <th>DROPTRIP<br>Rate / Km</th>
+              <th>ROUNDTRIP<br>Rate / Km</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let rate of tariffRates">
+              <td><b>{{ rate.vehicleType }}</b><br><span class="tariff-vehicle-note">{{ rate.note }}</span></td>
+              <td>{{ rate.dropRate }}</td>
+              <td>{{ rate.roundRate }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tariff-terms">
+        <ul>
+          <li *ngFor="let term of tariffTerms" [innerHTML]="term"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="local-package-table-wrapper">
+      <h2 class="local-package-title">Local Package Trips</h2>
+      <table class="tariff-table">
+        <thead>
+          <tr>
+            <th>PACKAGE TYPE</th>
+            <th>SEDAN</th>
+            <th>MUV</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pkg of localPackages">
+            <td>{{ pkg.packageType }}</td>
+            <td>{{ pkg.sedan }}</td>
+            <td>{{ pkg.muv }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tariff-terms mt-2">
+        <a href="#" class="tariff-link">Toll fees, Inter-State Permit charges (if any)</a> are extra.
+      </div>
+    </div>
+  </section>
+</section>
+
+
+
+<section class="outstation-section">
+  <div class="outstation-row">
+    <!-- Left: Outstation Package Trips -->
+    <div class="outstation-table-wrapper">
+      <h2 class="outstation-title">Outstation Package Trips</h2>
+      <table class="tariff-table">
+        <thead>
+          <tr>
+            <th>PACKAGE TYPE</th>
+            <th>SEDAN</th>
+            <th>MUV</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pkg of outstationPackages">
+            <td [innerHTML]="pkg.packageType"></td>
+            <td>{{ pkg.sedan }}</td>
+            <td>{{ pkg.muv }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tariff-terms mt-2">
+        <span class="tariff-link">{{ outstationNote }}</span>
+      </div>
+    </div>
+
+    <!-- Right: Tempo Traveller -->
+    <div class="tempo-table-wrapper">
+      <h2 class="tempo-title">Tempo Traveller</h2>
+      <table class="tariff-table">
+        <thead>
+          <tr>
+            <th>DESCRIPTION</th>
+            <th>ROUND TRIP ONLY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of tempoTraveller">
+            <td>{{ row.description }}</td>
+            <td>{{ row.roundTrip }}</td>
+          </tr>
+          <tr>
+            <td colspan="2">{{ tempoTravellerNotes[0] }}</td>
+          </tr>
+          <tr>
+            <td colspan="2">{{ tempoTravellerNotes[1] }}</td>
+          </tr>
+          <tr>
+            <td colspan="2">{{ tempoTravellerNotes[2] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<section class="services-section">
+  <h2 class="tariff-title tariff-title-center">Our Services</h2>
+  <p class="text-center text-gray-600 mb-6">
+    Experience convenience and safety with SS Car Rental's trusted services.
+  </p>
+
+  <div class="services-grid">
+    <div
+      class="service-card"
+      *ngFor="let service of services"
+      [@fadeUp]
+    >
+      <div class="icon">
+        <i [class]="service.icon"></i>
+      </div>
+      <h3>{{ service.title }}</h3>
+      <p>{{ service.description }}</p>
+    </div>
+  </div>
+</section>

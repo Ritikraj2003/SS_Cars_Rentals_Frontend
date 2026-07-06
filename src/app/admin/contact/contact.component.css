@@ -1,0 +1,61 @@
+@media screen and (max-width: 576px) {
+  .table thead {
+    display: none;
+  }
+
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    width: 45%;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+}
+
+
+.section-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #003366;
+}
+
+.section-box {
+  border: 1px solid #007bff;
+  background-color: #f0f8ff;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.section-box .row div {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+
+::ng-deep .modal-dialog.main_add_popup {
+  max-width: 1000px; 
+}
+

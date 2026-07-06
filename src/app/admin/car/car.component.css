@@ -1,0 +1,77 @@
+@media screen and (max-width: 576px) {
+  .table thead {
+    display: none;
+  }
+
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    width: 45%;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+}
+
+.bg-light-blue {
+  background-color: #f0f8ff; /* Light blue shade */
+}
+.text-wrap-break {
+  word-break: break-word;
+}
+
+.custom-upload-box {
+  border: 2px dashed #d3d6db;
+  border-radius: 10px;
+  background: #fafbfc;
+  width: 100%;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  margin-bottom: 8px;
+}
+.custom-upload-box:hover {
+  border-color: #007bff;
+  background: #f4f8ff;
+}
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.upload-icon {
+  font-size: 2.5rem;
+  color: #7b8794;
+  margin-bottom: 8px;
+}
+.upload-text {
+  color: #7b8794;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+

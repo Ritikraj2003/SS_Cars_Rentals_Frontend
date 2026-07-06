@@ -1,0 +1,79 @@
+.booking-form-container {
+  max-width: 800px;
+  margin: 40px auto 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.close-btn {
+  position: static;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #222;
+  cursor: pointer;
+  transition: color 0.2s;
+  margin-left: 8px;
+}
+.close-btn:hover {
+  color: #d32f2f;
+}
+
+.booking-form-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #18182f;
+  margin: 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='date'],
+input[type='time'],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

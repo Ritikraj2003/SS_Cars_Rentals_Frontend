@@ -1,0 +1,76 @@
+<div class="container py-5">
+  <h2 class="text-center text-orange fw-bold mb-4" [@fadeInDown]>About Us</h2>
+  <p class="text-center text-muted mb-5" [@fadeInDown]>
+    At SS Car Rental, we believe that every journey should be safe, smooth, and memorable. Whether you're heading to a business meeting, a weekend getaway, or a family vacation, we provide dependable and affordable vehicles that match your needs...
+  </p>
+
+  <div class="row mb-5">
+    <div class="col-md-6 mb-4" [@fadeInUp]>
+      <div class="card custom-card h-100">
+        <div class="card-body">
+          <h5 class="card-title text-orange fw-bold">
+            <span class="text-3xl mr-2">🎯</span> Our Mission
+          </h5>
+          <p class="card-text mt-3">
+           Our mission is to deliver high-quality, reliable, and affordable rental experiences that exceed customer expectations. We aim to provide vehicles that are not only comfortable and safe but also tailored to your lifestyle and travel preferences. Through constant innovation, technology integration, and a customer-first approach, we work tirelessly to make every ride a pleasant and trustworthy one.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4" [@fadeInUp]>
+      <div class="card custom-card h-100">
+        <div class="card-body">
+          <h5 class="card-title text-orange fw-bold">
+            <span class="text-3xl mr-2">👁️</span> Our Vision
+          </h5>
+          <p class="card-text mt-3">
+           Our vision is to become India's most trusted and tech-savvy car rental service provider. We aspire to set new standards in mobility solutions by blending convenience, affordability, and superior service. With a strong focus on sustainability, digital transformation, and personalized customer experiences, we envision a future where every individual and business can access reliable transportation anytime, anywhere.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="text-center text-orange fw-bold mb-4">Meet Our Team</h2>
+ <div class="container px-4">
+  <div class="row justify-content-center gx-3"> <!-- gx-3 reduces horizontal gutter -->
+    <div class="col-md-6 col-lg-4 mb-4" [@fadeInUp]>
+      <div class="card text-center custom-card team-card">
+        <img src="assets/Team/suraj1.jpeg" class="rounded-circle mx-auto mt-4" width="120" height="120" alt="Suraj Roy">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Suraj Roy</h5>
+          <p class="card-text">Founder & CEO</p>
+          <button class="btn btn-warning"><i class="bi bi-telephone-fill"></i> Contact</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4 mb-4" [@fadeInUp]>
+      <div class="card text-center custom-card team-card">
+        <img src="assets/Team/sabita2.jpeg" class="rounded-circle mx-auto mt-4" width="120" height="120" alt="Sabita Yadav">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Sabita Yadav</h5>
+          <p class="card-text">Account Manager</p>
+          <button class="btn btn-warning"><i class="bi bi-telephone-fill"></i> Contact</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <h2 class="text-center text-orange fw-bold mb-4">Frequently Asked Questions</h2>
+  <div class="accordion" id="faqAccordion">
+    <div class="accordion-item" *ngFor="let faq of faqs; let i = index" [@fadeInUp]>
+      <h2 class="accordion-header">
+        <button class="accordion-button" [class.collapsed]="!faq.isOpen" type="button" (click)="toggleFaq(i)">
+          {{ faq.question }}
+        </button>
+      </h2>
+      <div [hidden]="!faq.isOpen" class="accordion-collapse">
+        <div class="accordion-body">
+          {{ faq.answer }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <input type="text" class="form-control w-25" placeholder="Search..." [(ngModel)]="searchTerm" />
+       
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle">
+            <thead class="table-light text-center">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone No</th>
+                    <th>Booking By Company</th>
+                    <th style="width: 100px;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of paginatedData">
+                    <td>{{ item.bookingId }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.phone_no }}</td>
+                    <td>{{ item.companyEnabled ? 'Company' : 'Not Company' }}</td>
+                    <td class="text-center p-1">
+                        <div class="d-flex justify-content-center align-items-center gap-2">
+                            <i class="bi bi-eye text-info" role="button" title="View" (click)="ViewItem(item,BookingDataView)"></i>
+                            <i class="bi bi-pencil-square text-primary" role="button" (click)="editItem(item)"title="Edit"></i>
+                            <i class="bi bi-trash text-danger" role="button" (click)="deleteItem(item)"title="Delete"></i>
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-flex justify-content-end align-items-center gap-2">
+        <button class="btn btn-outline-secondary btn-sm" [disabled]="currentPage === 1"
+            (click)="previousPage()">Previous</button>
+        <span>Page {{ currentPage }}</span>
+        <button class="btn btn-outline-secondary btn-sm" [disabled]="currentPage * pageSize >= filteredData.length"
+            (click)="nextPage()">Next</button>
+    </div>
+</div>
+
+<ng-template #BookingDataView let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title text-primary fw-bold">Booking Details</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+  </div>
+
+  <div class="modal-body">
+    
+    <div class="section-title">Contact Details</div>
+    <div class="section-box">
+      <div class="row mb-2">
+        <div class="col-md-4"><b>Name</b><br>{{viewData.name}}</div>
+        <div class="col-md-4"><b>Phone_no</b><br>{{viewData.phone_no}}</div>
+        <div class="col-md-4"><b>Email</b><br>{{viewData.email}}</div>
+      </div>
+    </div>
+    <div class="section-title">PickUp Details</div>
+    <div class="section-box">
+      <div class="row">
+        <div class="col-md-4"><b>Pickup Location</b><br>{{viewData.pickupLocation}}</div>
+        <div class="col-md-4"><b>PickupDate</b><br>{{viewData.pickupDate}}</div>
+        <div class="col-md-4"><b>Pickup Time</b><br>{{viewData.pickupTime}}</div>
+      </div>
+    </div>
+    <div class="section-title">Drop Details</div>
+    <div class="section-box">
+      <div class="row mb-2">
+        <div class="col-md-4"><b>Drop Location</b><br>{{viewData.dropLocation}}</div>
+        <div class="col-md-4"><b>Drop Date</b><br>{{viewData.dropdate}}</div>
+        <div class="col-md-4"><b>Drop Time</b><br>{{viewData.droptime}}</div>
+      </div>
+    </div>
+    <div class="section-title" *ngIf="viewData.companyEnabled">Company Details
+    <div class="section-box">
+      <div class="row mb-2">
+        <div class="col-md-4"><b>Company  Name</b><br>{{viewData.companyName}}</div>
+        <div class="col-md-4"><b>Description</b><br>{{viewData.companyDescription}}</div>
+      </div>
+    </div>
+    </div>
+  </div>
+</ng-template>
+
+

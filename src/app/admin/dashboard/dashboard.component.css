@@ -1,0 +1,169 @@
+.top-section {
+  width: 1280px;
+}
+@media only screen and (max-width: 1600px) {
+  .top-section { width: 1280px; }
+}
+@media only screen and (max-width: 1500px) {
+  .top-section { width: 1180px; }
+}
+@media only screen and (max-width: 1400px) {
+  .top-section { width: 1080px; }
+}
+@media only screen and (max-width: 1200px) {
+  .top-section { width: 950px; }
+}
+
+.middle-section {
+  display: flex;
+  justify-content: space-between;
+  width: 1280px;
+}
+@media only screen and (max-width: 1600px) {
+  .middle-section { width: 1280px; }
+}
+@media only screen and (max-width: 1500px) {
+  .middle-section { width: 1180px; }
+}
+@media only screen and (max-width: 1400px) {
+  .middle-section { width: 1080px; }
+}
+@media only screen and (max-width: 1200px) {
+  .middle-section { width: 980px; }
+}
+
+.middle-section .widget {
+  height: 350px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px #939393;
+}
+.middle-section .widget.left {
+  width: 890px;
+}
+@media only screen and (max-width: 1600px) {
+  .middle-section .widget.left { width: 790px; }
+}
+@media only screen and (max-width: 1500px) {
+  .middle-section .widget.left { width: 690px; }
+}
+@media only screen and (max-width: 1400px) {
+  .middle-section .widget.left { width: 590px; }
+}
+@media only screen and (max-width: 1200px) {
+  .middle-section .widget.left { width: 490px; }
+}
+.middle-section .widget.right {
+  width: 450px;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-section .widget {
+  height: 250px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px #939393;
+}
+.bottom-section .widget.left {
+  width: 670px;
+}
+@media only screen and (max-width: 1200px) {
+  .bottom-section .widget.left { width: 570px; }
+}
+.bottom-section .widget.right {
+  width: 670px;
+}
+@media only screen and (max-width: 1600px) {
+  .bottom-section .widget.right { width: 570px; }
+}
+@media only screen and (max-width: 1500px) {
+  .bottom-section .widget.right { width: 470px; }
+}
+@media only screen and (max-width: 1400px) {
+  .bottom-section .widget.right { width: 370px; }
+}
+@media only screen and (max-width: 1200px) {
+  .bottom-section .widget.right { width: 370px; }
+}
+
+/* ////////////////////////////// */
+.widget-container {
+  display: flex;
+  align-items: space-between;
+}
+.widget-container .widget {
+  width: 250px;
+  height: 150px;
+  background-color: #fff;
+  color: #fff;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px #939393;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.widget-container .widget.green {
+  background-color: rgb(4, 67, 66);
+}
+.widget-container .widget.yellow {
+  background-color: rgb(237, 158, 32);
+}
+.widget-container .widget.red {
+  background-color: rgb(126, 5, 5);
+}
+.widget-container .widget.blue {
+  background-color: rgb(105, 32, 251);
+}
+@media only screen and (max-width: 1600px) {
+  .widget-container .widget { width: 245px; }
+}
+@media only screen and (max-width: 1500px) {
+  .widget-container .widget { width: 205px; }
+}
+@media only screen and (max-width: 1400px) {
+  .widget-container .widget { width: 175px; }
+}
+@media only screen and (max-width: 1200px) {
+  .widget-container .widget { width: 175px; }
+}
+
+.widget-container .widget .icon {
+  width: 100px;
+  font-size: 40px;
+  text-align: center;
+}
+@media only screen and (max-width: 1200px) {
+  .widget-container .widget .icon { font-size: 30px; }
+}
+
+.widget-container .widget .value {
+  text-align: center;
+  width: 150px;
+}
+.widget-container .widget .value .top {
+  font-size: 30px;
+}
+@media only screen and (max-width: 1200px) {
+  .widget-container .widget .value .top { font-size: 26px; }
+}
+.widget-container .widget .value .bottom {
+  font-size: 20px;
+  margin-top: 10px;
+}
+@media only screen and (max-width: 1200px) {
+  .widget-container .widget .value .bottom { font-size: 16px; }
+}
+
+.img-icon {
+  width: 115px;
+  height: 115px;
+}
+.chart-container {
+  padding: 20px;
+}

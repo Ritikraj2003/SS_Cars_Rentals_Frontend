@@ -1,0 +1,147 @@
+<div class="booking-main-container">
+  <!-- Right Side: Booking Form -->
+  <div class="right-section">
+  <div class="form-section" [@slideInUp]>
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="form-box">
+      <h2>Booking Form</h2>
+
+      <!-- Row 1 -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Car Type</label>
+          <select formControlName="cartype">
+            <option value="">Select</option>
+            <option *ngFor="let item of AllCars" [value]="item.carName">
+              {{ item.carModel }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Booking Type</label>
+          <select formControlName="BookingType">
+            <option value="">Select</option>
+            <option *ngFor="let type of Bookingtypes" [value]="type.type">
+              {{ type.type }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone No</label>
+          <input type="text" formControlName="Phone_no" />
+        </div>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" formControlName="Name" />
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" formControlName="Email" />
+        </div>
+        <div class="form-group">
+          <label>Pickup Location</label>
+          <input type="text" formControlName="PickupLocation" />
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Pickup Date</label>
+          <input type="date" formControlName="PickupDate" />
+        </div>
+        <div class="form-group">
+          <label>Pickup Time</label>
+          <input type="time" formControlName="PickupTime" />
+        </div>
+      </div>
+
+      <!-- Row 5 -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Drop Location</label>
+          <input type="text" formControlName="DropLocation" />
+        </div>
+        <div class="form-group">
+          <label>Drop Date</label>
+          <input type="date" formControlName="Dropdate" />
+        </div>
+      </div>
+
+      <!-- Row 6 -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Drop Time</label>
+          <input type="time" formControlName="Droptime" />
+        </div>
+        <div class="form-group">
+          <label>Booking Date</label>
+          <input type="date" formControlName="BookingDate" />
+        </div>
+      </div>
+
+      <!-- Toggle -->
+      <div class="form-row">
+        <div class="form-group full-width">
+          <label>
+            <input type="checkbox" formControlName="CompanyEnabled" /> Add
+            Company Info
+          </label>
+        </div>
+      </div>
+
+      <!-- Conditional Row -->
+      <div class="form-row" *ngIf="bookingForm.get('CompanyEnabled')?.value">
+        <div class="form-group">
+          <label>Company Name</label>
+          <input type="text" formControlName="CompanyName" />
+        </div>
+        <div class="form-group">
+          <label>Company Description</label>
+          <input type="text" formControlName="CompanyDescription" />
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="bookingForm.invalid">Submit</button>
+    </form>
+    </div>
+  </div>
+
+  <!-- Left Side: Feedback Slider + Why Us -->
+  <div class="left-section">
+    <div class="feedback-slider">
+      <ng-container *ngIf="currentFeedbackData as feedback">
+        <div class="feedback-slide">
+          <ng-container *ngIf="feedback.Photo; else placeholderAvatar">
+            <img [src]="feedback.Photo" alt="Customer photo" class="feedback-img" />
+          </ng-container>
+          <ng-template #placeholderAvatar>
+            <div class="feedback-placeholder">
+              {{ (feedback.Name || 'C').charAt(0) }}
+            </div>
+          </ng-template>
+          <div class="feedback-text">
+            <p class="feedback-message">"{{ feedback.Message }}"</p>
+            <p class="feedback-name">- {{ feedback.Name }}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="why-us-section">
+    <h2>Why Book With Us?</h2>
+      <ul>
+        <li>✔ Wide range of cars (SUVs, Sedans, Luxury)</li>
+        <li>✔ 24/7 Customer Support</li>
+        <li>✔ Easy and quick booking process</li>
+        <li>✔ Reliable pickup and drop services</li>
+      </ul>
+    </div>
+  </div>
+</div>

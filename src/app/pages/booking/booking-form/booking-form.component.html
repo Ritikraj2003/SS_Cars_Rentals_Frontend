@@ -1,0 +1,99 @@
+<div class="booking-form-container">
+  <div class="popup-header">
+    <h2>Booking Form</h2>
+    <button class="close-btn" (click)="closeModal()">&#10005;</button>
+  </div>
+  <div *ngIf="!showForm" class="d-flex justify-content-center align-items-center" style="min-height: 200px;">
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <form *ngIf="showForm" [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+    <div class="form-grid">
+
+      <!-- Row 1 -->
+      <div>
+        <label>Car Type</label>
+        <select formControlName="carType">
+          <option value="">Select</option>
+          <option *ngFor="let car of AllCars" [value]="car.carModel">{{ car.carModel }}</option>
+        </select>
+      </div>
+      <div>
+        <label>Booking Type</label>
+        <select formControlName="bookingType">
+          <option value="">Select</option>
+          <option *ngFor="let type of Bookingtypes" [value]="type.bookingName">{{ type.bookingName }}</option>
+        </select>
+      </div>
+
+      <!-- Row 2 -->
+      <div>
+        <label>Phone No</label>
+        <input type="text" formControlName="phone" />
+      </div>
+      <div>
+        <label>Name</label>
+        <input type="text" formControlName="name" />
+      </div>
+
+      <!-- Row 3 -->
+      <div>
+        <label>Email</label>
+        <input type="email" formControlName="email" />
+      </div>
+      <div>
+        <label>Pickup Location</label>
+        <input type="text" formControlName="pickupLocation" />
+      </div>
+
+      <!-- Row 4 -->
+      <div>
+        <label>Pickup Date</label>
+        <input type="date" formControlName="pickupDate" />
+      </div>
+      <div>
+        <label>Pickup Time</label>
+        <input type="time" formControlName="pickupTime" />
+      </div>
+
+      <!-- Row 5 -->
+      <div>
+        <label>Drop Location</label>
+        <input type="text" formControlName="dropLocation" />
+      </div>
+      <div>
+        <label>Drop Date</label>
+        <input type="date" formControlName="dropDate" />
+      </div>
+
+      <!-- Row 6 -->
+      <div>
+        <label>Drop Time</label>
+        <input type="time" formControlName="dropTime" />
+      </div>
+      <div>
+        <label>Booking Date</label>
+        <input type="date" formControlName="bookingDate" />
+      </div>
+
+      <!-- Row 7 -->
+      <div class="checkbox-row full-width">
+        <input type="checkbox" id="addCompany" formControlName="addCompany" />
+        <label for="addCompany">Add Company Info</label>
+      </div>
+
+      <!-- Row 8 -->
+      <div *ngIf="isCompanyEnabled">
+        <label>Company Name</label>
+        <input type="text" formControlName="companyName" />
+      </div>
+      <div *ngIf="isCompanyEnabled">
+        <label>Company Description</label>
+        <input type="text" formControlName="companyDescription" />
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+</div>

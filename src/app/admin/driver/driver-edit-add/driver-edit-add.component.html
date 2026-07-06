@@ -1,0 +1,45 @@
+<div mat-dialog-title>
+  <h1>Driver Form</h1>
+</div>
+
+<form [formGroup]="DriverForm" (ngSubmit)="Submit()">
+  <div mat-dialog-content class="content">
+    <div class="container">
+      <div class="row">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" formControlName="name" placeholder="Enter your name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="text" formControlName="gmail" placeholder="Enter your Email">
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Phone no</mat-label>
+          <input matInput type="text" formControlName="phone" placeholder="Enter Phone No">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Age</mat-label>
+          <input matInput type="text" formControlName="age" placeholder="Enter Age">
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Address</mat-label>
+          <textarea matInput formControlName="address" placeholder="Enter Address"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button"[mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data?'Update':'Save'}}</button>
+  </div>
+</form>

@@ -1,0 +1,77 @@
+<section class="hero-slider-section">
+  <div class="slider-container">
+    <div
+      class="slide"
+      *ngFor="let slide of slides; let i = index"
+      [ngClass]="{ 'active': currentSlide === i }"
+      [style.backgroundImage]="'url(' + slide + ')'"
+    ></div>
+  </div>
+
+  <div class="overlay">
+    <div class="hero-content">
+      <h1>Freedom on Four Wheels</h1>
+      <p>
+        Discover India at your own pace — Premium cars, unbeatable prices, and hassle-free booking.
+      </p>
+      <button class="hero-button" routerLink="/booking">
+        🚗 Reserve Your Ride Now
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="how-to-book-section py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold text-primary">How To Book a Self–Drive Car Online</h2>
+    <p class="text-muted">
+      Book a car online in Kolkata from MyChoize in 4 Simple steps.
+    </p>
+
+    <div class="steps-wrapper position-relative">
+      <div class="connector-line"></div>
+
+      <div class="booking-steps d-flex justify-content-between flex-wrap">
+        <!-- Step 1 -->
+        <div class="step text-center">
+          <div class="icon-wrapper bg-light-green">
+            <i class="bi bi-calendar2-check-fill text-success fs-2"></i>
+          </div>
+          <h5 class="step-number">01</h5>
+          <p>Select City & Travel dates</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step text-center">
+          <div class="icon-wrapper bg-light-blue">
+            <i class="bi bi-car-front-fill text-info fs-2"></i>
+          </div>
+          <h5 class="step-number">02</h5>
+          <p>Choose Car & Delivery Mode</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step text-center">
+          <div class="icon-wrapper bg-light-pink">
+            <i class="bi bi-clipboard-check-fill text-danger fs-2"></i>
+          </div>
+          <h5 class="step-number">03</h5>
+          <p>Verify Yourself</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step text-center">
+          <div class="icon-wrapper bg-light-yellow">
+            <i class="bi bi-currency-rupee text-warning fs-2"></i>
+          </div>
+          <h5 class="step-number">04</h5>
+          <p>Make Payment</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<app-our-services></app-our-services>

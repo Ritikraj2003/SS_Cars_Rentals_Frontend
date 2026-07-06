@@ -1,0 +1,82 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <input type="text" class="form-control w-25" placeholder="Search..." [(ngModel)]="searchTerm" />
+    <button class="btn btn-primary" (click)="OpenDriver(driverFormTemplate)">
+      <i class="bi bi-plus"></i> Add Driver
+    </button>
+  </div>
+
+
+  <div class="table-responsive">
+    <table class="table table-bordered align-middle">
+      <thead class="table-light text-center">
+        <tr>
+          <th>Driver ID</th>
+          <th>Name</th>
+          <th>Gmail</th>
+          <th>Phone_No</th>
+          <th style="width: 100px;">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of paginatedData">
+          <td>{{ item.driverID}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.gmail}}</td>
+          <td>{{item.phone}}</td>
+          <td class="text-center p-1">
+            <div class="d-flex justify-content-center align-items-center gap-2">
+              <i class="bi bi-eye text-info" role="button" title="View"></i>
+              <i class="bi bi-pencil-square text-primary" role="button" (click)="editItem(item,driverFormTemplate)"></i>
+              <i class="bi bi-trash text-danger" role="button" (click)="deleteItem(item)"></i>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="d-flex justify-content-end align-items-center gap-2">
+    <button class="btn btn-outline-secondary btn-sm" [disabled]="currentPage === 1" (click)="previousPage()">Previous</button>
+    <span>Page {{ currentPage }}</span>
+    <button class="btn btn-outline-secondary btn-sm" [disabled]="currentPage * pageSize >= filteredData.length" (click)="nextPage()">Next</button>
+  </div>
+</div>
+
+ 
+<!-- Driver form -->
+ <ng-template #driverFormTemplate let-data>
+  <div class="form-container">
+    <h2>Driver Form</h2>
+    <form [formGroup]="driverForm" (ngSubmit)="onSubmitDialog()">
+      <div class="form-grid">
+        <div class="form-field">
+          <label>Name*</label>
+          <input type="text" formControlName="name" placeholder="Enter your name" />
+        </div>
+        <div class="form-field">
+          <label>Email*</label>
+          <input type="email" formControlName="gmail" placeholder="Enter your email" />
+        </div>
+        <div class="form-field">
+          <label>Phone no*</label>
+          <input type="text" formControlName="phone" placeholder="Enter phone number" />
+        </div>
+        <div class="form-field">
+          <label>Age*</label>
+          <input type="number" formControlName="age" placeholder="Enter age" />
+        </div>
+        <div class="form-field full-width">
+          <label>Address</label>
+          <textarea rows="2" formControlName="address" placeholder="Address"></textarea>
+        </div>
+      </div>
+      <div class="button-row">
+        <button type="button" class="btn cancel" (click)="close()" >Cancel</button>
+        <button type="submit" class="btn save">Save</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+

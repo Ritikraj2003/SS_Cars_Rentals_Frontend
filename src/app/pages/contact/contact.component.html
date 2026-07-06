@@ -1,0 +1,96 @@
+<div class="contact-section">
+
+  <!-- Top Title -->
+  <div class="top-title mb_20 contact-card">
+    <h2>Contact Us — We're here to help</h2>
+    <p>Questions about booking, fleet, or corporate partnerships? Drop us a message — we reply within 24 hours.</p>
+
+    <div class="cta-buttons">
+      <button class="cta-btn">📞 Call: +91 85216 90791</button>
+      <button class="cta-btn">✉ Email: hello@carrental.com</button>
+    </div>
+  </div>
+    <div class="d-flex flex-column justify-content-center align-items-center top-title ">
+        <h2>Get in touch</h2>
+        <span>Fill the form or use the contact details on the right. For urgent support call our hotline.</span>
+      </div>
+  <!-- Main Card -->
+  <div class="contact-card">
+
+    <!-- Left Form -->
+    <div class="contact-form">
+      
+
+      <form [formGroup]="ContactForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" formControlName="firstName" />
+        </div>
+
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" formControlName="lastName" />
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" formControlName="email" />
+        </div>
+
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="text" formControlName="phone" />
+        </div>
+
+        <div class="form-group">
+          <label>Location</label>
+          <input type="text" formControlName="location" />
+        </div>
+
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" formControlName="city" />
+        </div>
+
+        <div class="form-group">
+          <label>Region</label>
+          <input type="text" formControlName="region" />
+        </div>
+
+        <div class="form-group">
+          <label>Postal Code</label>
+          <input type="text" formControlName="postalCode" />
+        </div>
+
+        <div class="form-group">
+          <label>Country</label>
+          <input type="text" formControlName="country" />
+        </div>
+
+        <div class="form-group full">
+          <label>Message</label>
+          <textarea formControlName="message"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+
+      </form>
+    </div>
+
+    <!-- Right Box -->
+    <div class="contact-info mt_50">
+      <div class="info-box">
+        <p><strong>📍 Address:</strong> 123 Main Street, Cityname, State, PIN - 123456</p>
+        <p><strong>📞 Phone:</strong> +91 85216 90791</p>
+        <p><strong>📧 Email:</strong> infosscarrental.com</p>
+      </div>
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.1013007758913!2d88.363895!3d22.572646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277afffffffff%3A0xdeeac71be4f55848!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen=""
+          aria-hidden="false" tabindex="0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
