@@ -7,10 +7,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #dadada;
-  padding: 10px 30px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: #eef0f3; /* Light gray from the design */
+  padding: 5px 50px;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   flex-wrap: wrap;
   box-sizing: border-box;
 }
@@ -21,55 +21,89 @@
 }
 
 .logo {
-  height: 50px;
+  height: 80px;
   width: auto;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.logo-name {
-  font-size: 22px;
-  font-weight: 700;
-  margin-left: 10px;
-  color: #f0f0f0;
-  cursor: default;
+.logo:hover {
+  transform: scale(1.02);
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
+  gap: 30px;
+}
+
+.nav-links-wrapper {
+  display: flex;
   gap: 25px;
+  align-items: center;
 }
 
 .nav-link {
-  color: #000;
+  color: #4a5568;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 16px;
-  padding: 6px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  background-color: transparent !important;
 }
 
-.nav-link:hover {
-  background-color: #3a3a5a;
-  color: #fff;
-}
-
-/* Active link styling when the router marks a link active */
+.nav-link:hover,
 .nav-link.active {
-  background-color: #334078;
-  color: #fff;
-  box-shadow: 0 2px 6px rgba(51, 64, 120, 0.18);
+  color: #fca020; /* Orange color from the design */
+}
+
+/* Remove the blue underline from before */
+.nav-link::after {
+  display: none;
+}
+
+.book-now-btn {
+  background-color: #fca020; /* Orange button */
+  color: #212529; /* Dark text */
+  border: none;
+  padding: 10px 24px;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.book-now-btn:hover {
+  background-color: #e8911b;
+  transform: translateY(-2px);
 }
 
 .hamburger {
   display: none;
   font-size: 26px;
-  color: #fff;
+  color: #1a202c;
   cursor: pointer;
 }
 
+@media (max-width: 992px) {
+  .navbar-right {
+    gap: 15px;
+  }
+  .nav-links-wrapper {
+    gap: 15px;
+  }
+}
+
 @media (max-width: 768px) {
+  .navbar {
+    padding: 10px 25px;
+  }
+
   .hamburger {
     display: block;
   }
@@ -78,17 +112,32 @@
     display: none;
     flex-direction: column;
     width: 100%;
-    padding-top: 15px;
+    padding-top: 20px;
+    gap: 15px;
   }
 
   .navbar-right.active {
     display: flex;
   }
 
+  .nav-links-wrapper {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
   .nav-link {
     width: 100%;
-    padding: 12px 0;
     text-align: center;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #dcdfe4;
+    padding-bottom: 15px;
+  }
+
+  .book-now-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
   }
 }
+
+

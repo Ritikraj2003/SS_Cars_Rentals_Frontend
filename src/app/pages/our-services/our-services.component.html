@@ -1,118 +1,64 @@
 
 
 
-<section class="tariff-main-section">
-  <h2 class="tariff-title tariff-title-center">Tariff Chart and Rates</h2>
-  <section class="local-package-section d-flex">
-    <div class="tariff-section tariff-section-inline">
-      <h2 class="tariff-subtitle">Drop Trips and Round Trips</h2>
-      <p class="tariff-desc">
-        Drop Taxi Provides drop trips and round trips all across Tamilnadu, Pondicherry, Karnataka, Kerala & Andhra Pradesh. Conventionally, all taxis charge two-way fare (up and down) even for drop trips on the pretext they return empty on the return journey. But here in Drop Taxi, we are transparent on our pricing and 100% guarantee no hidden charges.
+<section class="promo-section py-5 bg-white">
+  <div class="container py-4">
+    <!-- Section Heading -->
+    <div class="text-center mb-5 pb-3">
+      <h2 class="text-primary fw-bold display-6 mb-3">Why Travel With Us?</h2>
+      <p class="lead text-muted mx-auto" style="max-width: 700px;">
+        We believe in providing more than just a car. We provide an experience with a strict focus on your safety and comfort.
       </p>
-      <p class="tariff-note"><b>Below are the rates & Terms and Conditions for different type of vehicles.</b></p>
-      <div class="tariff-table-wrapper">
-        <table class="tariff-table">
-          <thead>
-            <tr>
-              <th>VEHICLE TYPE</th>
-              <th>DROPTRIP<br>Rate / Km</th>
-              <th>ROUNDTRIP<br>Rate / Km</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let rate of tariffRates">
-              <td><b>{{ rate.vehicleType }}</b><br><span class="tariff-vehicle-note">{{ rate.note }}</span></td>
-              <td>{{ rate.dropRate }}</td>
-              <td>{{ rate.roundRate }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="tariff-terms">
-        <ul>
-          <li *ngFor="let term of tariffTerms" [innerHTML]="term"></li>
-        </ul>
-      </div>
-    </div>
-    <div class="local-package-table-wrapper">
-      <h2 class="local-package-title">Local Package Trips</h2>
-      <table class="tariff-table">
-        <thead>
-          <tr>
-            <th>PACKAGE TYPE</th>
-            <th>SEDAN</th>
-            <th>MUV</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let pkg of localPackages">
-            <td>{{ pkg.packageType }}</td>
-            <td>{{ pkg.sedan }}</td>
-            <td>{{ pkg.muv }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="tariff-terms mt-2">
-        <a href="#" class="tariff-link">Toll fees, Inter-State Permit charges (if any)</a> are extra.
-      </div>
-    </div>
-  </section>
-</section>
-
-
-
-<section class="outstation-section">
-  <div class="outstation-row">
-    <!-- Left: Outstation Package Trips -->
-    <div class="outstation-table-wrapper">
-      <h2 class="outstation-title">Outstation Package Trips</h2>
-      <table class="tariff-table">
-        <thead>
-          <tr>
-            <th>PACKAGE TYPE</th>
-            <th>SEDAN</th>
-            <th>MUV</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let pkg of outstationPackages">
-            <td [innerHTML]="pkg.packageType"></td>
-            <td>{{ pkg.sedan }}</td>
-            <td>{{ pkg.muv }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="tariff-terms mt-2">
-        <span class="tariff-link">{{ outstationNote }}</span>
-      </div>
     </div>
 
-    <!-- Right: Tempo Traveller -->
-    <div class="tempo-table-wrapper">
-      <h2 class="tempo-title">Tempo Traveller</h2>
-      <table class="tariff-table">
-        <thead>
-          <tr>
-            <th>DESCRIPTION</th>
-            <th>ROUND TRIP ONLY</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of tempoTraveller">
-            <td>{{ row.description }}</td>
-            <td>{{ row.roundTrip }}</td>
-          </tr>
-          <tr>
-            <td colspan="2">{{ tempoTravellerNotes[0] }}</td>
-          </tr>
-          <tr>
-            <td colspan="2">{{ tempoTravellerNotes[1] }}</td>
-          </tr>
-          <tr>
-            <td colspan="2">{{ tempoTravellerNotes[2] }}</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="row align-items-center">
+      <!-- Left Side: Text and Points -->
+      <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+
+        <div class="d-flex align-items-start mb-5">
+          <div class="icon-wrapper flex-shrink-0 bg-light-green me-4 shadow-sm" style="width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: #e0f5e9;">
+            <i class="fas fa-route fa-2x" style="color: #198754;"></i>
+          </div>
+          <div>
+            <h4 class="fw-bold mb-2 text-dark">Unlimited Kilometers</h4>
+            <p class="text-muted mb-0 fs-5">Drive as much as you want without worrying about distance limits on selected packages.</p>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-start mb-5">
+          <div class="icon-wrapper flex-shrink-0 bg-light-blue me-4 shadow-sm" style="width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: #e2f0fb;">
+            <i class="fas fa-hand-sparkles fa-2x" style="color: #0dcaf0;"></i>
+          </div>
+          <div>
+            <h4 class="fw-bold mb-2 text-dark">Clean & Safe Cars</h4>
+            <p class="text-muted mb-0 fs-5">Our cars are thoroughly sanitized and inspected before every trip for your safety.</p>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-start">
+          <div class="icon-wrapper flex-shrink-0 bg-light-pink me-4 shadow-sm" style="width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: #fde8ec;">
+            <i class="fas fa-wallet fa-2x" style="color: #6f42c1;"></i>
+          </div>
+          <div>
+            <h4 class="fw-bold mb-2 text-dark">No Hidden Charges</h4>
+            <p class="text-muted mb-0 fs-5">What you see is what you pay. Enjoy transparent pricing with every booking.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Right Side: Safety Slider -->
+      <div class="col-lg-6">
+        <div class="safety-slider-box position-relative rounded-4 shadow-lg overflow-hidden" style="height: 500px;">
+          <ng-container *ngFor="let slide of safetySlides; let i = index">
+            <img [src]="slide" alt="Safety and Cleanliness" class="safety-slide-img w-100 h-100 object-fit-cover position-absolute top-0 start-0" [ngClass]="{'active': currentSafetySlide === i}" />
+          </ng-container>
+          <div class="safety-slider-controls position-absolute bottom-0 end-0 p-3 z-3 d-flex gap-2">
+            <button class="btn btn-primary rounded-circle shadow d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" (click)="prevSafetySlide()"><i class="fas fa-chevron-left"></i></button>
+            <button class="btn btn-primary rounded-circle shadow d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" (click)="nextSafetySlide()"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -130,7 +76,7 @@
       *ngFor="let service of services"
       [@fadeUp]
     >
-      <div class="icon">
+      <div class="icon" [style.color]="service.color">
         <i [class]="service.icon"></i>
       </div>
       <h3>{{ service.title }}</h3>

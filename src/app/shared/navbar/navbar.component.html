@@ -1,20 +1,25 @@
 <!-- navbar.component.html -->
 <nav class="navbar">
   <div class="navbar-left">
-    <img src="assets/Logo/MainLogo.svg" alt="Logo" class="logo" />
+    <img src="assets/Logo/sscarlogo.png" alt="Logo" class="logo" />
   
   </div>
 
-  <div class="hamburger" onclick="document.querySelector('.navbar-right').classList.toggle('active')">
-    ☰
+  <div class="hamburger" (click)="toggleMenu()">
+    <i class="bi" [ngClass]="isMenuOpen ? 'bi-x-lg' : 'bi-list'"></i>
   </div>
 
-  <div class="navbar-right">
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Home</a>
-    <a routerLink="/our-services" routerLinkActive="active" class="nav-link">Service</a>
-    <a routerLink="/about" routerLinkActive="active" class="nav-link">About Us</a>
-    <a routerLink="/fleet" routerLinkActive="active" class="nav-link">Fleet</a>
-    <a routerLink="/booking" routerLinkActive="active" class="nav-link">Booking</a>
-    <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
+  <div class="navbar-right" [class.active]="isMenuOpen">
+    <div class="nav-links-wrapper">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link" (click)="closeMenu()">HOME</a>
+      <a routerLink="/fleet" routerLinkActive="active" class="nav-link" (click)="closeMenu()">OUR FLEET</a>
+      <a routerLink="/about" routerLinkActive="active" class="nav-link" (click)="closeMenu()">ABOUT</a>
+      <a routerLink="/contact" routerLinkActive="active" class="nav-link" (click)="closeMenu()">CONTACT</a>
+    </div>
+    <button class="book-now-btn" (click)="openBookingModal()">
+      <i class="fas fa-calendar-alt me-2"></i> BOOK NOW
+    </button>
   </div>
 </nav>
+
+

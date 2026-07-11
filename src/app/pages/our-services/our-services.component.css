@@ -3,6 +3,27 @@
   background-color: #f9f9f9;
 }
 
+.safety-slider-box {
+  background-color: #f8f9fa;
+}
+
+.safety-slide-img {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 1;
+}
+
+.safety-slide-img.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.safety-slider-controls {
+  background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+  width: 100%;
+  justify-content: flex-end;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 💡 4 columns per row */
@@ -25,7 +46,7 @@
 
 .icon {
   font-size: 2.5rem;
-  color: #f59e0b; /* amber-500 */
+  color: #0d6efd; /* amber-500 */
   margin-bottom: 1rem;
 }
 
@@ -82,13 +103,13 @@ p {
   font-size: 1rem;
 }
 .tariff-table th, .tariff-table td {
-  border: 1.5px solid #f4c200;
+  border: 1.5px solid #0d6efd;
   padding: 12px 10px;
   text-align: left;
   vertical-align: top;
 }
 .tariff-table th {
-  background: #f4c200;
+  background: #0d6efd;
   color: #222942;
   font-weight: 700;
   font-size: 1.08rem;
@@ -120,7 +141,7 @@ p {
   text-decoration: underline;
 }
 .tariff-link:hover {
-  color: #f4c200;
+  color: #0d6efd;
 }
 
 .local-package-section {
@@ -251,14 +272,14 @@ p {
 }
 
 .tariff-table th, .tariff-table td {
-  border: 1.5px solid #f4c200;
+  border: 1.5px solid #0d6efd;
   padding: 12px 10px;
   text-align: left;
   vertical-align: top;
 }
 
 .tariff-table th {
-  background: #f4c200;
+  background: #0d6efd;
   color: #222942;
   font-weight: 700;
   font-size: 1.08rem;

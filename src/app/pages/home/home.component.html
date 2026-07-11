@@ -1,25 +1,71 @@
-<section class="hero-slider-section">
-  <div class="slider-container">
-    <div
-      class="slide"
-      *ngFor="let slide of slides; let i = index"
-      [ngClass]="{ 'active': currentSlide === i }"
-      [style.backgroundImage]="'url(' + slide + ')'"
-    ></div>
+<section class="hero-section position-relative">
+  <!-- Full Background Slider -->
+  <div class="hero-bg-slider position-absolute top-0 start-0 w-100 h-100">
+    <div *ngFor="let slide of heroSlides; let i = index"
+      class="hero-bg-slide position-absolute top-0 start-0 w-100 h-100" [ngClass]="{'active': currentHeroSlide === i}"
+      [style.background-image]="'url(' + slide + ')'"></div>
+    <div class="hero-bg-overlay position-absolute top-0 start-0 w-100 h-100"></div>
   </div>
 
-  <div class="overlay">
-    <div class="hero-content">
-      <h1>Freedom on Four Wheels</h1>
-      <p>
-        Discover India at your own pace — Premium cars, unbeatable prices, and hassle-free booking.
-      </p>
-      <button class="hero-button" routerLink="/booking">
-        🚗 Reserve Your Ride Now
-      </button>
+  <div class="container py-5 position-relative z-3">
+    <div class="row align-items-center pt-5">
+      <!-- Left Side: Text and Buttons -->
+      <div class="col-lg-8 hero-left pe-lg-5">
+        <span class="premium-badge mb-3 mt-4">PREMIUM CAR RENTAL IN INDIA</span>
+        <h1 class="hero-title mt-2 mb-4">Experience Luxury &<br>Comfort on Every Journey</h1>
+        <p class="hero-subtitle mb-5 text-light">
+          SS Car Rentals offers top-tier, well-maintained vehicles for self-drive and chauffeur services. Whether for
+          business or leisure, travel with unmatched reliability and style.
+        </p>
+
+        <div class="hero-buttons d-flex flex-wrap gap-3 mb-5">
+          <button class="btn btn-primary-custom" routerLink="/booking">
+            VIEW TARIFF & BOOK &nbsp;&rarr;
+          </button>
+          <a href="tel:+918521690791" class="btn btn-secondary-custom">
+            <i class="fas fa-phone-alt me-2 text-muted"></i> CALL +91 8521690791
+          </a>
+        </div>
+
+        <div class="hero-features d-flex gap-4">
+          <div class="feature-item">
+            <i class="fas fa-shield-alt text-warning me-2"></i> <span class="text-white">Verified Vehicles</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-headset text-warning me-2"></i> <span class="text-white">24/7 Support</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- Bottom Right Controls -->
+  <div class="slider-controls-fixed position-absolute z-3">
+    <button class="slider-btn shadow-lg" (click)="prevHeroSlide()"><i class="fas fa-chevron-left"></i></button>
+    <button class="slider-btn shadow-lg" (click)="nextHeroSlide()"><i class="fas fa-chevron-right"></i></button>
+  </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <section class="how-to-book-section py-5">
   <div class="container text-center">
@@ -61,8 +107,8 @@
 
         <!-- Step 4 -->
         <div class="step text-center">
-          <div class="icon-wrapper bg-light-yellow">
-            <i class="bi bi-currency-rupee text-warning fs-2"></i>
+          <div class="icon-wrapper bg-light-primary">
+            <i class="bi bi-currency-rupee text-primary fs-2"></i>
           </div>
           <h5 class="step-number">04</h5>
           <p>Make Payment</p>
@@ -73,5 +119,176 @@
 </section>
 
 
-
 <app-our-services></app-our-services>
+
+<!-- Our Clients Section -->
+<section class="our-clients-section py-5" style="background-color: #f8f9fa;">
+  <div class="container text-center py-4">
+    <h6 class="fw-bold text-uppercase tracking-wide mb-2" style="letter-spacing: 1.5px; font-size: 0.8rem; color: #fca020;">
+      OUR TRUSTED PARTNERS
+    </h6>
+    <h2 class="fw-bold text-dark mb-5" style="color: #2b4c7e !important;">Top Corporate Clients</h2>
+    
+    <div class="d-flex flex-wrap justify-content-center align-items-center gap-5 mt-4">
+      <!-- Bosch -->
+      <img src="assets/Clients/bosch.jpeg" alt="Bosch" style="height: 50px; mix-blend-mode: multiply;">
+      
+      <!-- Tata -->
+      <img src="assets/Clients/tata.jpeg" alt="Tata" style="height: 60px; mix-blend-mode: multiply;">
+      
+      <!-- Aditya Birla -->
+      <img src="assets/Clients/abg.jpeg" alt="Aditya Birla" style="height: 60px; mix-blend-mode: multiply;">
+      
+      <!-- Mphasis -->
+      <img src="assets/Clients/mphasis.jpeg" alt="Mphasis" style="height: 50px; mix-blend-mode: multiply;">
+      
+      <!-- JSW -->
+      <img src="assets/Clients/jsw.jpeg" alt="JSW" style="height: 50px; mix-blend-mode: multiply;">
+    </div>
+  </div>
+</section>
+
+
+<!-- Milestones Section -->
+<section #milestonesSection class="milestones-section py-5 bg-white">
+  <div class="container text-center py-4">
+    <h2 class="fw-bold text-primary mb-2">Our Journey in Numbers</h2>
+    
+    <p class="text-muted mb-5 pb-3 mx-auto" style="max-width: 600px; font-size: 0.95rem;">
+      Delivering excellence, reliability, and unforgettable road trips across the country.
+    </p>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Milestone 1 -->
+      <div class="col-sm-6 col-md-3">
+        <div class="card border-0 h-100 shadow-sm overflow-hidden bg-light" style="border-radius: 12px; transition: transform 0.3s ease;">
+          <div class="d-flex flex-column align-items-center text-center p-4">
+            <div class="milestone-icon-box rounded-circle d-flex align-items-center justify-content-center shadow-sm mb-3" style="width: 85px; height: 85px; background-color: #e2f0fb;">
+              <i class="fas fa-car-side fa-3x" style="color: #0d6efd;"></i>
+            </div>
+            <h3 class="fw-bold mb-2 text-dark display-5">{{ premiumVehicles }}+</h3>
+            <p class="text-muted mb-0 fw-semibold fs-6">Premium Vehicles</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Milestone 2 -->
+      <div class="col-sm-6 col-md-3">
+        <div class="card border-0 h-100 shadow-sm overflow-hidden bg-light" style="border-radius: 12px; transition: transform 0.3s ease;">
+          <div class="d-flex flex-column align-items-center text-center p-4">
+            <div class="milestone-icon-box rounded-circle d-flex align-items-center justify-content-center shadow-sm mb-3" style="width: 85px; height: 85px; background-color: #e0f5e9;">
+              <i class="fas fa-road fa-3x" style="color: #198754;"></i>
+            </div>
+            <h3 class="fw-bold mb-2 text-dark display-5">{{ kilometersDriven >= 1000 ? '1M+' : kilometersDriven + 'K+' }}</h3>
+            <p class="text-muted mb-0 fw-semibold fs-6">Kilometers Driven</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Milestone 3 -->
+      <div class="col-sm-6 col-md-3">
+        <div class="card border-0 h-100 shadow-sm overflow-hidden bg-light" style="border-radius: 12px; transition: transform 0.3s ease;">
+          <div class="d-flex flex-column align-items-center text-center p-4">
+            <div class="milestone-icon-box rounded-circle d-flex align-items-center justify-content-center shadow-sm mb-3" style="width: 85px; height: 85px; background-color: #fde8ec;">
+              <i class="fas fa-map-marked-alt fa-3x" style="color: #6f42c1;"></i>
+            </div>
+            <h3 class="fw-bold mb-2 text-dark display-5">{{ citiesCovered }}+</h3>
+            <p class="text-muted mb-0 fw-semibold fs-6">Cities Covered</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Milestone 4 -->
+      <div class="col-sm-6 col-md-3">
+        <div class="card border-0 h-100 shadow-sm overflow-hidden bg-light" style="border-radius: 12px; transition: transform 0.3s ease;">
+          <div class="d-flex flex-column align-items-center text-center p-4">
+            <div class="milestone-icon-box rounded-circle d-flex align-items-center justify-content-center shadow-sm mb-3" style="width: 85px; height: 85px; background-color: #fef0e4;">
+              <i class="fas fa-smile-beam fa-3x" style="color: #fd7e14;"></i>
+            </div>
+            <h3 class="fw-bold mb-2 text-dark display-5">{{ satisfactionRate }}%</h3>
+            <p class="text-muted mb-0 fw-semibold fs-6">Satisfaction Rate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feedback Section -->
+<section class="feedback-section py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold text-primary mb-4">What Our Clients Say</h2>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div
+          class="feedback-slider custom-feedback p-4 rounded-4 shadow-sm bg-white border-top border-4 border-primary">
+          <ng-container *ngIf="currentFeedbackData as feedback">
+            <div class="feedback-slide d-flex flex-column flex-md-row align-items-center text-start">
+
+              <!-- Left: Photo and Name -->
+              <div class="feedback-profile d-flex flex-column align-items-center pe-md-4 border-md-end mb-3 mb-md-0"
+                style="min-width: 150px;">
+                <ng-container *ngIf="feedback.Photo; else placeholderAvatar">
+                  <img [src]="feedback.Photo" alt="Customer photo"
+                    class="rounded-circle shadow-sm mb-2 border border-2 border-primary" width="90" height="90"
+                    style="object-fit: cover;" />
+                </ng-container>
+                <ng-template #placeholderAvatar>
+                  <div
+                    class="feedback-placeholder rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold shadow-sm mb-2"
+                    style="width: 90px; height: 90px; font-size: 2.5rem;">
+                    {{ (feedback.Name || 'C').charAt(0) }}
+                  </div>
+                </ng-template>
+                <h6 class="mb-0 fw-bold text-dark text-center">{{ feedback.Name }}</h6>
+                <small class="text-primary fs-6">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                </small>
+              </div>
+
+              <!-- Right: Message -->
+              <div class="feedback-text flex-grow-1 ps-md-4 position-relative pt-3 pt-md-0">
+                <i
+                  class="fas fa-quote-left text-muted opacity-25 fa-2x position-absolute top-0 start-0 translate-middle-y"></i>
+                <p class="fst-italic text-secondary mb-0 ps-3 pe-2 fs-5" style="z-index: 1; position: relative;">"{{
+                  feedback.Message }}"</p>
+                <i
+                  class="fas fa-quote-right text-muted opacity-25 fa-2x position-absolute bottom-0 end-0 translate-middle-y mt-2"></i>
+              </div>
+
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section py-5">
+  <div class="container px-4 px-md-5">
+    <h2 class="text-center text-primary fw-bold mb-5">Frequently Asked Questions</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item shadow-sm border-0 mb-3 rounded overflow-hidden"
+            *ngFor="let faq of faqs; let i = index">
+            <h2 class="accordion-header">
+              <button class="accordion-button fw-bold text-dark bg-white" [class.collapsed]="!faq.isOpen" type="button"
+                (click)="toggleFaq(i)">
+                {{ faq.question }}
+              </button>
+            </h2>
+            <div [hidden]="!faq.isOpen" class="accordion-collapse border-top border-light">
+              <div class="accordion-body text-secondary bg-light">
+                {{ faq.answer }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

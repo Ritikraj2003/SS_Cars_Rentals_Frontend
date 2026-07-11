@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
@@ -21,25 +21,26 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ]
 })
 export class AboutUsComponent {
+
   faqs = [
     {
-      question: 'What types of vehicles do you offer?',
-      answer: 'We offer hatchbacks, sedans, SUVs, and luxury cars.',
+      question: 'What types of vehicles are available for rent?',
+      answer: 'We offer a diverse fleet including hatchbacks for city driving, sedans for business trips, SUVs for family vacations, and luxury cars for special occasions.',
       isOpen: true
     },
     {
-      question: 'How do I book a car?',
-      answer: 'You can book through our website or by contacting us.',
+      question: 'Are there any mileage limits on my rental?',
+      answer: 'Our rentals come with transparent mileage policies. We offer unlimited kilometers on select packages, while others have a generous daily limit. Please check your specific package details during booking.',
       isOpen: false
     },
     {
-      question: 'Do you provide chauffeur services?',
-      answer: 'Yes, we offer chauffeur services upon request.',
+      question: 'What is included in the rental price?',
+      answer: 'The rental price includes the vehicle, standard insurance, and GST. Additional charges may apply for tolls, interstate permits, and driver allowances for outstation trips.',
       isOpen: false
     },
     {
-      question: 'Are your rentals available 24/7?',
-      answer: 'Yes, our services are available around the clock.',
+      question: 'Can I modify or cancel my booking?',
+      answer: 'Yes, you can easily modify or cancel your booking through our website or by calling our 24/7 customer support. Cancellations made 24 hours prior to pickup are usually free of charge.',
       isOpen: false
     }
   ];

@@ -1,73 +1,214 @@
-<div class="container py-5">
-  <h2 class="text-center text-orange fw-bold mb-4" [@fadeInDown]>About Us</h2>
-  <p class="text-center text-muted mb-5" [@fadeInDown]>
-    At SS Car Rental, we believe that every journey should be safe, smooth, and memorable. Whether you're heading to a business meeting, a weekend getaway, or a family vacation, we provide dependable and affordable vehicles that match your needs...
-  </p>
+<!-- Full Width Background Wrapper -->
+<div class="bg-light pt-5 pb-5 mb-5" style="background-color: #f8f9fa !important;">
+  <div class="container mt-3">
+    <div class="row align-items-center gx-5">
+      <!-- Left Content -->
+      <div class="col-lg-5 mb-5 mb-lg-0 pe-lg-5" [@fadeInDown]>
+        <h6 class="fw-bold text-uppercase tracking-wide mb-3 d-flex align-items-center"
+          style="letter-spacing: 1.5px; font-size: 0.8rem; color: #fca020;">
+          <span
+            style="width: 25px; height: 1px; background-color: currentColor; margin-right: 12px; display: inline-block;"></span>
+          OUR STORY
+        </h6>
+        <h1 class="fw-bolder mb-4 display-5 text-dark"
+          style="line-height: 1.15; letter-spacing: -1px; color: #1a202c !important;">
+          Precision Engineered for Excellence.
+        </h1>
+        <p class="text-secondary fs-6 lh-lg mb-4">
+          At SS Car Rentals, we view mobility as a discipline of absolute precision. Our approach integrates advanced
+          vehicle maintenance, disciplined execution planning, and strict quality monitoring at every stage.
+        </p>
+        <p class="text-secondary fs-6 lh-lg mb-5">
+          From economy hatchbacks to premium sedans, we maintain high-performance standards and a safety-led culture
+          that ensures every journey is built to last.
+        </p>
+        <button class="btn rounded-2 px-4 py-2 fw-bold shadow-sm"
+          style="background-color: #fca020; border-color: #fca020; color: #111827;" routerLink="/fleet"
+          onmouseover="this.style.backgroundColor='#e0910b'" onmouseout="this.style.backgroundColor='#fca020'">
+          See Fleet
+        </button>
+      </div>
 
-  <div class="row mb-5">
-    <div class="col-md-6 mb-4" [@fadeInUp]>
-      <div class="card custom-card h-100">
-        <div class="card-body">
-          <h5 class="card-title text-orange fw-bold">
-            <span class="text-3xl mr-2">🎯</span> Our Mission
-          </h5>
-          <p class="card-text mt-3">
-           Our mission is to deliver high-quality, reliable, and affordable rental experiences that exceed customer expectations. We aim to provide vehicles that are not only comfortable and safe but also tailored to your lifestyle and travel preferences. Through constant innovation, technology integration, and a customer-first approach, we work tirelessly to make every ride a pleasant and trustworthy one.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 mb-4" [@fadeInUp]>
-      <div class="card custom-card h-100">
-        <div class="card-body">
-          <h5 class="card-title text-orange fw-bold">
-            <span class="text-3xl mr-2">👁️</span> Our Vision
-          </h5>
-          <p class="card-text mt-3">
-           Our vision is to become India's most trusted and tech-savvy car rental service provider. We aspire to set new standards in mobility solutions by blending convenience, affordability, and superior service. With a strong focus on sustainability, digital transformation, and personalized customer experiences, we envision a future where every individual and business can access reliable transportation anytime, anywhere.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+      <!-- Right Single Image -->
+      <div class="col-lg-7" [@fadeInUp]>
+        <div class="about-image-wrapper shadow rounded-4 position-relative overflow-hidden" style="height: 480px;">
+          <img src="assets/car-rental-office.png" class="w-100 h-100" style="object-fit: cover;"
+            alt="SS Car Rental Office">
 
-  <h2 class="text-center text-orange fw-bold mb-4">Meet Our Team</h2>
- <div class="container px-4">
-  <div class="row justify-content-center gx-3"> <!-- gx-3 reduces horizontal gutter -->
-    <div class="col-md-6 col-lg-4 mb-4" [@fadeInUp]>
-      <div class="card text-center custom-card team-card">
-        <img src="assets/Team/suraj1.jpeg" class="rounded-circle mx-auto mt-4" width="120" height="120" alt="Suraj Roy">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Suraj Roy</h5>
-          <p class="card-text">Founder & CEO</p>
-          <button class="btn btn-warning"><i class="bi bi-telephone-fill"></i> Contact</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-4 mb-4" [@fadeInUp]>
-      <div class="card text-center custom-card team-card">
-        <img src="assets/Team/sabita2.jpeg" class="rounded-circle mx-auto mt-4" width="120" height="120" alt="Sabita Yadav">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Sabita Yadav</h5>
-          <p class="card-text">Account Manager</p>
-          <button class="btn btn-warning"><i class="bi bi-telephone-fill"></i> Contact</button>
+          <!-- Overlapping Info Card -->
+          <div class="position-absolute bottom-0 start-0 m-4 bg-white rounded-3 shadow-lg p-3"
+            style="max-width: 280px; border-left: 4px solid #fca020;">
+            <h6 class="fw-bold mb-1" style="font-size: 0.85rem; color: #2b4c7e;">Service
+              Milestone</h6>
+            <p class="text-secondary mb-0" style="font-size: 0.75rem; line-height: 1.4;">
+              5+ Years of precision in the car rental industry, providing top-tier vehicles and large-scale mobility
+              solutions.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Tagline Section -->
+<div class="container mb-5 text-center py-4" [@fadeInUp]>
+  <h2 class="display-6 fw-bold text-dark mb-3">Drive the Difference.</h2>
+  <p class="lead text-muted mx-auto" style="max-width: 700px;">
+    Experience unparalleled comfort, uncompromising safety, and ultimate freedom on every road you travel with SS Car
+    Rental.
+  </p>
+</div>
 
-  <h2 class="text-center text-orange fw-bold mb-4">Frequently Asked Questions</h2>
+<div class="container pb-5">
+  <div class="row mb-5 align-items-stretch gx-4 mt-4">
+    <div class="col-md-6 mb-4" [@fadeInUp]>
+      <div class="card h-100 border-0 shadow-sm rounded-4" style="border-top: 4px solid #fca020 !important;">
+        <div class="card-body p-4 p-lg-5">
+          <div class="d-flex align-items-center mb-4">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle shadow-sm me-3"
+              style="width: 50px; height: 50px; background-color: #fca020; color: #111827;">
+              <i class="fas fa-bullseye fa-lg"></i>
+            </div>
+            <h5 class="fw-bold text-dark mb-0" style="font-size: 1.1rem;">Our Mission</h5>
+          </div>
+          <p class="text-secondary fs-6 lh-lg mb-0">
+            To deliver high-quality, reliable, and affordable rental experiences that exceed expectations. We provide
+            vehicles tailored to your lifestyle and travel preferences, ensuring a comfortable and safe journey every
+            time.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4" [@fadeInUp]>
+      <div class="card h-100 border-0 shadow-sm rounded-4" style="border-top: 4px solid #fca020 !important;">
+        <div class="card-body p-4 p-lg-5">
+          <div class="d-flex align-items-center mb-4">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle shadow-sm me-3"
+              style="width: 50px; height: 50px; background-color: #fca020; color: #111827;">
+              <i class="fas fa-eye fa-lg"></i>
+            </div>
+            <h5 class="fw-bold text-dark mb-0" style="font-size: 1.1rem;">Our Vision</h5>
+          </div>
+          <p class="text-secondary fs-6 lh-lg mb-0">
+            To become India's most trusted and tech-savvy car rental service. We aspire to set new standards in mobility
+            solutions, focusing on sustainability, digital transformation, and delivering a deeply personalized
+            experience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="leadership-messages mb-5 pb-5">
+    <h1 class="text-center fw-bolder mb-0 text-dark" style="letter-spacing: -1.5px; font-size: 3rem; line-height: 1.2;">
+      Message from Leadership</h1>
+    <p class="text-center text-muted mb-5 mx-auto mt-2" style="max-width: 600px; font-size: 0.95rem;">
+      Discover the vision and dedication that drives SS Car Rentals to deliver unparalleled luxury mobility experiences.
+    </p>
+
+    <!-- Row 1: Suraj Roy (Image Left, Message Right) -->
+    <div class="row align-items-center mb-5 pb-5" [@fadeInUp]>
+      <div class="col-md-5 mb-4 mb-md-0">
+        <img src="assets/Team/suraj.png" class="rounded-4 shadow w-100"
+          style="object-fit: cover; height: 550px; object-position: top;" alt="Suraj Roy">
+      </div>
+      <div class="col-md-7 ps-md-5">
+        <h6 class="fw-bold text-uppercase tracking-wide mb-2 d-flex align-items-center"
+          style="letter-spacing: 1.5px; font-size: 0.75rem; color: #fca020;">
+          <span
+            style="width: 25px; height: 1px; background-color: currentColor; margin-right: 12px; display: inline-block;"></span>
+          FOUNDER & CEO
+        </h6>
+        <h2 class="fw-bold text-dark mb-4 display-6">Suraj Roy</h2>
+        <div class="position-relative mb-4">
+          <span class="position-absolute"
+            style="font-size: 4rem; top: -15px; left: -25px; font-family: serif; color: #e9ecef; z-index: -1;">&ldquo;</span>
+          <p class="text-secondary fs-5 lh-lg mb-0" style="font-style: italic;">
+            Our goal has always been to redefine mobility by putting our customers first. We don't just rent cars; we
+            aim to provide seamless, unforgettable travel experiences. SS Car Rentals was built on the foundation of
+            trust, quality, and extreme attention to detail.
+          </p>
+        </div>
+        <button class="btn bg-white border border-secondary text-dark rounded-3 px-4 py-2 fw-semibold shadow-sm"
+          style="font-size: 0.9rem;"
+          onmouseover="this.style.backgroundColor='#fca020'; this.style.borderColor='#fca020'"
+          onmouseout="this.style.backgroundColor='white'; this.style.borderColor='#6c757d'"><i
+            class="fas fa-phone-alt me-2 text-muted"></i> Contact Suraj</button>
+      </div>
+    </div>
+
+    <!-- Row 2: Sabita Yadav (Message Left, Image Right) -->
+    <div class="row align-items-center flex-column-reverse flex-md-row" [@fadeInUp]>
+      <div class="col-md-7 pe-md-5 mt-4 mt-md-0 text-md-end">
+        <h6 class="fw-bold text-uppercase tracking-wide mb-2 d-flex align-items-center justify-content-md-end"
+          style="letter-spacing: 1.5px; font-size: 0.75rem; color: #fca020;">
+          ACCOUNT MANAGER
+          <span
+            style="width: 25px; height: 1px; background-color: currentColor; margin-left: 12px; display: inline-block;"></span>
+        </h6>
+        <h2 class="fw-bold text-dark mb-4 display-6">Sabita Yadav</h2>
+        <div class="position-relative mb-4 d-inline-block text-start text-md-end">
+          <span class="position-absolute"
+            style="font-size: 4rem; top: -15px; left: -25px; font-family: serif; color: #e9ecef; z-index: -1;">&ldquo;</span>
+          <p class="text-secondary fs-5 lh-lg mb-0" style="font-style: italic;">
+            Ensuring our clients receive the best value and support is at the heart of everything we do. From
+            competitive pricing to personalized service, we strive to make every booking an absolute pleasure and build
+            lasting relationships.
+          </p>
+        </div>
+        <div>
+          <button class="btn bg-white border border-secondary text-dark rounded-3 px-4 py-2 fw-semibold shadow-sm"
+            style="font-size: 0.9rem;"
+            onmouseover="this.style.backgroundColor='#fca020'; this.style.borderColor='#fca020'"
+            onmouseout="this.style.backgroundColor='white'; this.style.borderColor='#6c757d'"><i
+              class="fas fa-phone-alt me-2 text-muted"></i> Contact Sabita</button>
+        </div>
+      </div>
+      <div class="col-md-5 mb-4 mb-md-0">
+        <img src="assets/Team/sabita2.jpeg" class="rounded-4 shadow w-100" style="object-fit: cover; height: 550px;"
+          alt="Sabita Yadav">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Our Clients Section -->
+  <div class="our-clients-section mb-5 pb-4 text-center">
+    <h6 class="fw-bold text-uppercase tracking-wide mb-2" style="letter-spacing: 1.5px; font-size: 0.8rem; color: #fca020;">
+      OUR TRUSTED PARTNERS
+    </h6>
+    <h2 class="fw-bold text-dark mb-5" style="color: #2b4c7e !important;">Top Corporate Clients</h2>
+    
+    <div class="d-flex flex-wrap justify-content-center align-items-center gap-5 mt-4 pb-4 border-bottom border-light">
+      <!-- Bosch -->
+      <img src="assets/Clients/bosch.jpeg" alt="Bosch" style="height: 50px; mix-blend-mode: multiply;">
+      
+      <!-- Tata -->
+      <img src="assets/Clients/tata.jpeg" alt="Tata" style="height: 60px; mix-blend-mode: multiply;">
+      
+      <!-- Aditya Birla -->
+      <img src="assets/Clients/abg.jpeg" alt="Aditya Birla" style="height: 60px; mix-blend-mode: multiply;">
+      
+      <!-- Mphasis -->
+      <img src="assets/Clients/mphasis.jpeg" alt="Mphasis" style="height: 50px; mix-blend-mode: multiply;">
+      
+      <!-- JSW -->
+      <img src="assets/Clients/jsw.jpeg" alt="JSW" style="height: 50px; mix-blend-mode: multiply;">
+    </div>
+  </div>
+
+  <h2 class="text-center fw-bold mb-4" style="color: #2b4c7e;">Frequently Asked Questions</h2>
   <div class="accordion" id="faqAccordion">
     <div class="accordion-item" *ngFor="let faq of faqs; let i = index" [@fadeInUp]>
       <h2 class="accordion-header">
-        <button class="accordion-button" [class.collapsed]="!faq.isOpen" type="button" (click)="toggleFaq(i)">
+        <button class="accordion-button fw-bold" [class.collapsed]="!faq.isOpen" type="button" (click)="toggleFaq(i)"
+          style="color: #2b4c7e;">
           {{ faq.question }}
         </button>
       </h2>
       <div [hidden]="!faq.isOpen" class="accordion-collapse">
-        <div class="accordion-body">
+        <div class="accordion-body text-secondary">
           {{ faq.answer }}
         </div>
       </div>

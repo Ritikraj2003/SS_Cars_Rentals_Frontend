@@ -28,10 +28,10 @@ export class FleetComponent implements OnInit {
   }
 
   steps = [
-    { number: 1, iconClass: 'fas fa-car fa-3x text-warning', description: 'Choose your car' },
-    { number: 2, iconClass: 'fas fa-file-alt fa-3x text-warning', description: 'Fill out the booking form' },
-    { number: 3, iconClass: 'fas fa-check-circle fa-3x text-warning', description: 'Confirm your rental' },
-    { number: 4, iconClass: 'fas fa-smile fa-3x text-warning', description: 'Enjoy your ride!' }
+    { number: 1, colorClass: 'text-info', iconClass: 'fas fa-car fa-3x', description: 'Choose your car' },
+    { number: 2, colorClass: 'text-warning', iconClass: 'fas fa-file-alt fa-3x', description: 'Fill out the booking form' },
+    { number: 3, colorClass: 'text-success', iconClass: 'fas fa-check-circle fa-3x', description: 'Confirm your rental' },
+    { number: 4, colorClass: 'text-danger', iconClass: 'fas fa-smile fa-3x', description: 'Enjoy your ride!' }
   ];
 
   isSmallScreen(): boolean {
@@ -80,10 +80,5 @@ export class FleetComponent implements OnInit {
 //   });
 // }
 
-openTariffDetails(car: any, template: TemplateRef<any>): void {
-  this.modalService.open(template, {
-    centered: true,
-    size: 'lg'
-  });
-}   
+
 }

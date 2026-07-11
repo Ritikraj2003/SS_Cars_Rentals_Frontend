@@ -116,32 +116,49 @@
 
   <!-- Left Side: Feedback Slider + Why Us -->
   <div class="left-section">
-    <div class="feedback-slider">
+    <div class="booking-benefits-card bg-primary text-dark p-4 rounded-4 shadow-lg mb-4 position-relative overflow-hidden">
+      <div class="position-absolute top-0 end-0 p-3 opacity-25">
+        <i class="fas fa-car-side fa-4x"></i>
+      </div>
+      <h3 class="fw-bold mb-3"><i class="fas fa-star text-white me-2"></i> Premium Experience</h3>
+      <p class="mb-4">Join thousands of satisfied customers who have chosen us for their travel needs. We ensure top-notch service and reliability.</p>
+      
+      <div class="stats-row d-flex justify-content-between mb-2">
+        <div class="stat-item text-center bg-white rounded p-2 shadow-sm flex-fill me-2">
+          <h4 class="fw-bold text-primary mb-0">5k+</h4>
+          <small class="text-muted fw-bold">Happy Clients</small>
+        </div>
+        <div class="stat-item text-center bg-white rounded p-2 shadow-sm flex-fill ms-2">
+          <h4 class="fw-bold text-primary mb-0">4.9</h4>
+          <small class="text-muted fw-bold">Average Rating</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-slider custom-feedback p-4 rounded-4 shadow-sm bg-white border-top border-4 border-primary">
+      <h5 class="fw-bold text-dark mb-3">What Our Clients Say</h5>
       <ng-container *ngIf="currentFeedbackData as feedback">
         <div class="feedback-slide">
-          <ng-container *ngIf="feedback.Photo; else placeholderAvatar">
-            <img [src]="feedback.Photo" alt="Customer photo" class="feedback-img" />
-          </ng-container>
-          <ng-template #placeholderAvatar>
-            <div class="feedback-placeholder">
-              {{ (feedback.Name || 'C').charAt(0) }}
+          <div class="d-flex align-items-center mb-3">
+            <ng-container *ngIf="feedback.Photo; else placeholderAvatar">
+              <img [src]="feedback.Photo" alt="Customer photo" class="rounded-circle shadow-sm me-3 border border-2 border-primary" width="60" height="60" style="object-fit: cover;" />
+            </ng-container>
+            <ng-template #placeholderAvatar>
+              <div class="feedback-placeholder rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold shadow-sm me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                {{ (feedback.Name || 'C').charAt(0) }}
+              </div>
+            </ng-template>
+            <div>
+              <h6 class="mb-0 fw-bold text-dark">{{ feedback.Name }}</h6>
+              <small class="text-primary"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></small>
             </div>
-          </ng-template>
-          <div class="feedback-text">
-            <p class="feedback-message">"{{ feedback.Message }}"</p>
-            <p class="feedback-name">- {{ feedback.Name }}</p>
+          </div>
+          <div class="feedback-text position-relative">
+            <i class="fas fa-quote-left text-muted opacity-25 fa-2x position-absolute top-0 start-0 translate-middle"></i>
+            <p class="fst-italic text-secondary mb-0 pt-2 px-2" style="z-index: 1; position: relative;">"{{ feedback.Message }}"</p>
           </div>
         </div>
       </ng-container>
-    </div>
-    <div class="why-us-section">
-    <h2>Why Book With Us?</h2>
-      <ul>
-        <li>✔ Wide range of cars (SUVs, Sedans, Luxury)</li>
-        <li>✔ 24/7 Customer Support</li>
-        <li>✔ Easy and quick booking process</li>
-        <li>✔ Reliable pickup and drop services</li>
-      </ul>
     </div>
   </div>
 </div>
