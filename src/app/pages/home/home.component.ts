@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -35,9 +36,17 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   private observer!: IntersectionObserver;
   private animationStarted = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private meta: Meta,
+    private titleService: Title
+  ) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle('Best Car Service in Kolkata - SS Car Rentals');
+    this.meta.updateTag({ name: 'description', content: 'Experience the best car rental service in Kolkata with SS Car Rentals. Premium vehicles, self-drive, and corporate rentals available.' });
+    this.meta.updateTag({ name: 'keywords', content: 'best car service in kolkata, car rental kolkata, corporate car rental, self drive cars kolkata' });
+
     this.getExcelData();
     this.heroInterval = setInterval(() => {
       this.nextHeroSlide();

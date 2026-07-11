@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about-us',
@@ -20,7 +21,14 @@ import { trigger, transition, style, animate } from '@angular/animations';
     ])
   ]
 })
-export class AboutUsComponent {
+export class AboutUsComponent implements OnInit {
+
+  constructor(private meta: Meta, private titleService: Title) {}
+
+  ngOnInit(): void {
+    this.titleService.setTitle('About Us - SS Car Rentals Kolkata');
+    this.meta.updateTag({ name: 'description', content: 'Learn more about SS Car Rentals, our mission, vision, and the leadership driving the best car rental experience in Kolkata.' });
+  }
 
   faqs = [
     {
