@@ -1,79 +1,34 @@
-.booking-form-container {
-  max-width: 800px;
-  margin: 40px auto 0 auto;
-  padding: 30px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-  position: relative;
+.premium-form .form-select,
+.premium-form .form-control {
+  padding: 10px 15px;
+  font-size: 14px;
 }
 
-.popup-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 18px;
+.premium-form .form-label {
+  font-size: 13px;
+  margin-bottom: 5px;
 }
 
-.close-btn {
-  position: static;
-  background: transparent;
-  border: none;
-  font-size: 28px;
-  color: #222;
-  cursor: pointer;
-  transition: color 0.2s;
-  margin-left: 8px;
-}
-.close-btn:hover {
-  color: #d32f2f;
+.premium-form .form-select:focus,
+.premium-form .form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(43, 76, 126, 0.15);
+  background-color: #fff !important;
 }
 
-.booking-form-container h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #18182f;
-  margin: 0;
+.custom-close {
+  opacity: 1;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.full-width {
-  grid-column: span 2;
-}
-
-input[type='text'],
-input[type='email'],
-input[type='date'],
-input[type='time'],
-select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-.submit-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.submit-btn:hover {
-  background: #0056b3;
-}
-
-.checkbox-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.custom-close:hover {
+  background-color: #fca020 !important;
+  border-color: #fca020;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 4px 8px rgba(252, 160, 32, 0.3);
 }

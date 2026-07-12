@@ -1,6 +1,7 @@
 /* Main Section */
 .contact-section {
-  padding: 80px 20px;
+  padding: 160px 20px 80px 20px; /* Increased top padding to account for navbar */
+  margin-top: -80px; /* Pull background up under navbar */
   background: linear-gradient(135deg, #eef2f9 0%, #dbe4f1 100%);
   display: flex;
   flex-direction: column;
@@ -206,13 +207,30 @@ iframe {
     flex-direction: column;
   }
 }
+
+@media (max-width: 576px) {
+  /* Force 2 input boxes per row on mobile as requested */
+  .contact-form form {
+    gap: 15px 10px; /* slightly smaller gap on mobile */
+  }
+  
+  .form-group {
+    flex: 0 0 calc(50% - 5px) !important;
+    max-width: calc(50% - 5px) !important;
+  }
+  
+  .form-group.full {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 .top-title{
   flex-direction: column !important;
-  
 }
 .mb_20{
   margin-bottom: 20px !important;
 }
 .mt_50 {
-    margin-top: 50px;
+  margin-top: 50px;
 }

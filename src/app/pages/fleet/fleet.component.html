@@ -1,33 +1,49 @@
-<section class="how-it-works-section py-5 text-center">
-  <h2 class="section-title mb-5">How It Works</h2>
+<section class="how-it-works-section pt-4 pb-5 text-center">
+  <div class="container mb-5 mt-3">
+    <p class="fs-4 fst-italic mx-auto" style="max-width: 800px; font-weight: 500; color: #2b4c7e;">
+      "Your journey matters as much as your destination. Experience the luxury of a <span style="color: #fca020; font-weight: 700;">premium fleet</span> tailored for your ultimate comfort."
+    </p>
+  </div>
+
+  <h2 class="section-title mb-5" style="color: #2b4c7e;">How To Book</h2>
   <div class="container">
     <div class="row gy-4 justify-content-center">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let step of steps">
-        <div class="card h-100 step-card animate-hover">
-          <div class="card-body d-flex flex-column align-items-center justify-content-center">
-            <div class="step-icon mb-3">
+        <div class="card h-100 step-card animate-hover border-0 shadow-sm" style="border-radius: 15px;">
+          <div class="card-body d-flex flex-column align-items-center justify-content-center p-4">
+            <div class="step-icon mb-3 position-relative">
               <div class="step-number" [ngClass]="step.colorClass">{{ step.number }}</div>
               <i [class]="step.iconClass" [ngClass]="step.colorClass"></i>
             </div>
-            <p class="card-text mt-2">{{ step.description }}</p>
+            <p class="card-text mt-2 fw-semibold text-dark">{{ step.description }}</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="mt-5 px-3">
-      <h3 class="section-title">Cars Available</h3>
-      <p class="lead text-muted family-font">
-        Choose from our wide range of premium cars for your rental needs.<br class="d-none d-md-block">
-        Whether you want comfort, luxury, or performance, we have the perfect ride for you.
+    <div class="mt-5 pt-4 px-3 mb-2">
+      <h3 class="section-title fw-bold display-6 mb-3" style="color: #2b4c7e;">Select Your Ride</h3>
+      <p class="lead text-muted family-font mx-auto" style="max-width: 800px;">
+        Choose from our wide range of premium chauffeur-driven cars tailored for your travel needs. Whether you require executive comfort, family luxury, or corporate performance, we have the perfect vehicle waiting for you.
       </p>
+
+      <!-- Premium Badges to fill the empty space nicely -->
+      <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+        <span class="badge bg-white text-dark px-3 py-2 border shadow-sm rounded-pill" style="font-size: 0.9rem;">
+          <i class="fas fa-shield-alt text-success me-2"></i>Fully Sanitized
+        </span>
+        <span class="badge bg-white text-dark px-3 py-2 border shadow-sm rounded-pill" style="font-size: 0.9rem;">
+          <i class="fas fa-user-tie text-primary me-2"></i>Verified Chauffeurs
+        </span>
+        <span class="badge bg-white text-dark px-3 py-2 border shadow-sm rounded-pill" style="font-size: 0.9rem;">
+          <i class="fas fa-gem text-warning me-2"></i>Premium Fleet
+        </span>
+      </div>
     </div>
   </div>
 </section>
 
-
-
-<section class="car-list-section py-5 text-center">
+<section class="car-list-section pb-5 pt-3 text-center">
   <div class="container">
     <div class="car-scroll-wrapper">
       <div

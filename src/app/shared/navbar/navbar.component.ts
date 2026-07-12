@@ -22,6 +22,13 @@ export class NavbarComponent {
 
   openBookingModal() {
     this.closeMenu();
-    this.modalService.open(BookingFormComponent, { size: 'lg', centered: true, backdrop: 'static' });
+    this.modalService.open(BookingFormComponent, {
+      backdrop: 'static',
+      windowClass: 'main_add_popup',
+      keyboard: true,
+      centered: true,
+      scrollable: true,
+      size: 'lg'
+    });
   }
 }

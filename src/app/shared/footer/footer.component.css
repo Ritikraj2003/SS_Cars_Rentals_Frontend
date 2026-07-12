@@ -1,12 +1,15 @@
 .custom-footer {
-  background-color: #f5f7fc; /* The light blue/gray background from image */
+  background-color: #f5f7fc;
+  /* The light blue/gray background from image */
   color: #4a5568;
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-top: auto;
+  border-top: 2px solid #2b4c7e; /* Blue outline at the top */
 }
 
 .footer-logo {
-  height: 60px; /* Adjust based on logo proportions */
+  height: 60px;
+  /* Adjust based on logo proportions */
   width: auto;
 }
 
@@ -39,7 +42,8 @@
 .footer-links a:hover,
 .footer-links a:focus,
 .footer-links a:active {
-  color: #2b6cb0; /* blue hover */
+  color: #2b6cb0;
+  /* blue hover */
   outline: none;
   box-shadow: none;
 }
@@ -55,10 +59,12 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  background-color: #e2e8f0; /* light blue/gray box */
+  background-color: #e2e8f0;
+  /* light blue/gray box */
   color: #2d3748;
   text-decoration: none;
-  border-radius: 8px; /* slightly rounded corners like image */
+  border-radius: 8px;
+  /* slightly rounded corners like image */
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -69,7 +75,7 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   font-size: 13px;
   color: #646e7f;
   background-color: #f5f7fc;
@@ -83,4 +89,40 @@
 
 .designer-name:hover {
   color: #fca020;
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 767px) {
+  .custom-footer .row > div {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .custom-footer .row > div:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .social-icon-box {
+    margin: 0 8px;
+  }
+
+  /* Center the contact list items */
+  .footer-contact li {
+    justify-content: center !important;
+    text-align: center;
+  }
+
+  /* Adjust icon margins when centered */
+  .footer-contact i {
+    margin-right: 10px !important;
+  }
+
+  .footer-bottom .container {
+    text-align: center;
+    gap: 10px;
+  }
 }

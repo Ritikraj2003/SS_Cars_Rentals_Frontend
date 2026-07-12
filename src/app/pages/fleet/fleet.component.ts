@@ -48,13 +48,14 @@ export class FleetComponent implements OnInit {
   // }
 
   onBookNow(car: any): void {
-    debugger
     const carid = car.id // fallback to car.id if carId is not present
     const modalRef = this.modalService.open(BookingFormComponent, {
       backdrop: 'static',
       windowClass: 'main_add_popup',
       keyboard: true,
-      centered: true
+      centered: true,
+      scrollable: true,
+      size: 'lg'
     });
     modalRef.componentInstance.carId = carid;
   }
