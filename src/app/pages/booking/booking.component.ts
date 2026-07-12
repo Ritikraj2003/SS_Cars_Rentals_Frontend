@@ -9,6 +9,7 @@ import {
 } from '@angular/animations';
 import { ApiService } from 'src/app/services/api.service';
 import { HttpClient } from '@angular/common/http';
+import { Meta, Title } from '@angular/platform-browser';
 
 
 
@@ -63,14 +64,18 @@ export class BookingComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private api: ApiService,
     private http: HttpClient,
-    private viewportScroller: ViewportScroller
-    
-   
+    private viewportScroller: ViewportScroller,
+    private meta: Meta,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
     // Ensure the page is at the top whenever this route loads or refreshes
     this.viewportScroller.scrollToPosition([0, 0]);
+
+    this.titleService.setTitle('Book a Car - SS Car Rentals Kolkata | Best Car Service');
+    this.meta.updateTag({ name: 'description', content: 'Book your premium car rental in Kolkata easily. Choose from our wide range of luxury vehicles and corporate cabs at SS Car Rentals.' });
+    this.meta.updateTag({ name: 'keywords', content: 'book car online kolkata, car rental booking, best car service in kolkata, premium chauffeur service, SS Car Rentals booking' });
 
     this.getExcelData();
     this.bookingForm = this.fb.group({

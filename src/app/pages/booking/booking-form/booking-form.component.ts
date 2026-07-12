@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from 'src/app/services/api.service';
 import { StaticDataService } from 'src/app/services/static-data.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-booking-form',
@@ -13,23 +14,24 @@ export class BookingFormComponent implements OnInit {
   @Input() bookingData: any; //Reciving the data from adminBooking Componenet
   @Input() carId: number | null = null;
   bookingForm!: FormGroup;
-  AllCars:any
-  Bookingtypes:any
+  AllCars: any
+  Bookingtypes: any
   isCompanyEnabled = false;
   isEditMode = false;
   editedItemId: number | null = null;
   showForm = false;
 
   constructor(private fb: FormBuilder,
-     private activeModal: NgbActiveModal,
-     private api : ApiService,
-    private staticService: StaticDataService
-  ) {}
+    private activeModal: NgbActiveModal,
+    private api: ApiService,
+    private staticService: StaticDataService,
+    private toastr: ToastrService
+  ) { }
 
   ngOnInit(): void {
     let carsLoaded = false;
     let carDetailLoaded = false;
-console.log("Car Id:",this.carId)
+    console.log("Car Id:", this.carId)
     this.Getcar(() => {
       carsLoaded = true;
       if (!this.carId) this.showForm = true;
@@ -67,12 +69,12 @@ console.log("Car Id:",this.carId)
       // });
       const car = this.staticService.getCarById(this.carId);
 
-if (car && car.carModel) {
-  this.bookingForm.patchValue({ carType: car.carModel });
-}
+      if (car && car.carModel) {
+        this.bookingForm.patchValue({ carType: car.carModel });
+      }
 
-carDetailLoaded = true;
-if (carsLoaded && carDetailLoaded) this.showForm = true;
+      carDetailLoaded = true;
+      if (carsLoaded && carDetailLoaded) this.showForm = true;
 
 
     } else {
@@ -109,32 +111,32 @@ if (carsLoaded && carDetailLoaded) this.showForm = true;
 
 
   editBooking() {
-  this.isEditMode = true;
-  this.editedItemId = this.bookingData.bookingId;
+    this.isEditMode = true;
+    this.editedItemId = this.bookingData.bookingId;
 
-  this.bookingForm.patchValue({
+    this.bookingForm.patchValue({
 
-    
-    carType: this.bookingData.cartype,           
-    bookingType: this.bookingData.bookingType,  
-    phone: this.bookingData.phone_no,
 
-    name: this.bookingData.name,
-    email: this.bookingData.email,
-    pickupLocation: this.bookingData.pickupLocation,
-    pickupDate: this.bookingData.pickupDate,
-    pickupTime: this.bookingData.pickupTime .split("T")[1],
-    dropLocation: this.bookingData.dropLocation,
-    dropDate: this.bookingData.dropdate,
-    dropTime: this.bookingData.droptime.split("T")[1],
-    bookingDate: this.bookingData.bookingDate,
-    addCompany: this.bookingData.addCompany,
-    companyName: this.bookingData.companyName,
-    companyDescription: this.bookingData.companyDescription,
-    CompanyEnabled: this.bookingData.CompanyEnabled,
-  });
-  console.log("Data",this.bookingForm.value)
-}
+      carType: this.bookingData.cartype,
+      bookingType: this.bookingData.bookingType,
+      phone: this.bookingData.phone_no,
+
+      name: this.bookingData.name,
+      email: this.bookingData.email,
+      pickupLocation: this.bookingData.pickupLocation,
+      pickupDate: this.bookingData.pickupDate,
+      pickupTime: this.bookingData.pickupTime.split("T")[1],
+      dropLocation: this.bookingData.dropLocation,
+      dropDate: this.bookingData.dropdate,
+      dropTime: this.bookingData.droptime.split("T")[1],
+      bookingDate: this.bookingData.bookingDate,
+      addCompany: this.bookingData.addCompany,
+      companyName: this.bookingData.companyName,
+      companyDescription: this.bookingData.companyDescription,
+      CompanyEnabled: this.bookingData.CompanyEnabled,
+    });
+    console.log("Data", this.bookingForm.value)
+  }
 
 
   // onSubmit(): void {
@@ -171,7 +173,7 @@ if (carsLoaded && carDetailLoaded) this.showForm = true;
 
 
 
-   closeModal() {
+  closeModal() {
     this.activeModal.close();
   }
 
@@ -189,52 +191,59 @@ if (carsLoaded && carDetailLoaded) this.showForm = true;
     if (callback) callback();
   }
 
-  GetBookingType(){
-  //    this.api.GetBookingType().subscribe({next: (res:any) => {
-  //       console.log('Carstype:', res);
-  //       this.Bookingtypes=res.data;
-  //     }
-  //   });
-    this.Bookingtypes=this.staticService.getAllBookingTypes();}
+  GetBookingType() {
+    //    this.api.GetBookingType().subscribe({next: (res:any) => {
+    //       console.log('Carstype:', res);
+    //       this.Bookingtypes=res.data;
+    //     }
+    //   });
+    this.Bookingtypes = this.staticService.getAllBookingTypes();
+  }
 
 
 
-    onSubmit(): void {
-      debugger;
-      if (this.bookingForm.valid) {
-        const formDataRaw = this.bookingForm.value;
-    
-        const data = {
-          Car_Type: formDataRaw.carType,
-          Booking_Type: formDataRaw.bookingType,
-          Booking_Date: formDataRaw.bookingDate,
-          Phone_No: formDataRaw.phone,
-          Full_Name: formDataRaw.name,
-          Email: formDataRaw.email,
-          Pick_Up_location: formDataRaw.pickupLocation,
-          Pick_Time: formDataRaw.pickupTime,
-          Pick_Date: formDataRaw.pickupDate,
-          Drop_location: formDataRaw.dropLocation,
-          Drop_Time: formDataRaw.dropTime,
-          Drop_Date: formDataRaw.dropDate,
-          CompanyName: formDataRaw.companyName,
-          CompanyDescription: formDataRaw.companyDescription
-        };
-    
-        console.log("Sending Data:", data);
-    
-        // Send to Google Apps Script
-        fetch("https://script.google.com/macros/s/AKfycby5R9-LeGPhn9oRuiBvsa-6tXFc0rmEcAEjHkTETU2UMmuSi-quzcECSzhHn7L9Up0SAw/exec", {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        });
-    
+  onSubmit(): void {
+    debugger;
+    if (this.bookingForm.valid) {
+      const formDataRaw = this.bookingForm.value;
+
+      const data = {
+        Car_Type: formDataRaw.carType,
+        Booking_Type: formDataRaw.bookingType,
+        Booking_Date: formDataRaw.bookingDate,
+        Phone_No: formDataRaw.phone,
+        Full_Name: formDataRaw.name,
+        Email: formDataRaw.email,
+        Pick_Up_location: formDataRaw.pickupLocation,
+        Pick_Time: formDataRaw.pickupTime,
+        Pick_Date: formDataRaw.pickupDate,
+        Drop_location: formDataRaw.dropLocation,
+        Drop_Time: formDataRaw.dropTime,
+        Drop_Date: formDataRaw.dropDate,
+        CompanyName: formDataRaw.companyName,
+        CompanyDescription: formDataRaw.companyDescription
+      };
+
+      console.log("Sending Data:", data);
+
+      // Send to Google Apps Script
+      fetch("https://script.google.com/macros/s/AKfycbzq1NBlzJzUOrLP7oz2ncdykvDmjmPHXuuwcrhZm-j4WbGfXrn9RLXvJ7JIA6UOCs47_w/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(data)
+      })
+      .then(() => {
         this.bookingForm.reset();
         this.closeModal();
-        
-      }
+        this.toastr.success('Booking submitted successfully!', 'Success');
+      })
+      .catch((error) => {
+        console.error('Error!', error.message);
+        this.toastr.error('Failed to submit, try again.', 'Error');
+      });
+
     }
-    
+  }
+
 }

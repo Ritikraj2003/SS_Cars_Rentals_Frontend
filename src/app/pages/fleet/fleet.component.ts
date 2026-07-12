@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BookingFormComponent } from '../booking/booking-form/booking-form.component';
 import { ApiService } from 'src/app/services/api.service';
 import { StaticDataService } from 'src/app/services/static-data.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-fleet',
@@ -17,10 +18,16 @@ export class FleetComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private api: ApiService,
-    private staticService: StaticDataService
+    private staticService: StaticDataService,
+    private meta: Meta,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle('Our Fleet - SS Car Rentals Kolkata | Best Car Service');
+    this.meta.updateTag({ name: 'description', content: 'Explore our wide range of premium vehicles at SS Car Rentals. From compact cars to luxury sedans, find the perfect car for your travel needs in Kolkata.' });
+    this.meta.updateTag({ name: 'keywords', content: 'SS Car Rentals fleet, best car service in kolkata, rent luxury car kolkata, chauffeur driven cars, premium cab service, rent SUV kolkata' });
+
     this.BaseUrl = this.path.replace(/^(.*:\/\/[^\/]+)\/.*/, '$1');
     //this.Getcar();
     this.AllCars = this.staticService.getAllCars();

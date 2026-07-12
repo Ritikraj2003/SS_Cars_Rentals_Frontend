@@ -18,6 +18,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatButtonModule,
     MatDialogModule,
     NgbModule,
-    FontAwesomeModule  // ✅ Should be in imports only
+    FontAwesomeModule,  // ✅ Should be in imports only
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    })
   ],
   providers: [
     {
