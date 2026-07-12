@@ -23,32 +23,38 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class AboutUsComponent implements OnInit {
 
-  constructor(private meta: Meta, private titleService: Title) {}
+  constructor(private meta: Meta, private titleService: Title) { }
 
   ngOnInit(): void {
     this.titleService.setTitle('About Us - SS Car Rentals Kolkata');
-    this.meta.updateTag({ name: 'description', content: 'Learn more about SS Car Rentals, our mission, vision, and the leadership driving the best car rental experience in Kolkata.' });
+    this.meta.updateTag({ name: 'description', content: 'Learn more about SS Car Rentals, our mission, vision, and the leadership driving the best premium chauffeur service in Kolkata.' });
+    this.meta.updateTag({ name: 'keywords', content: 'best chauffeur service in kolkata, luxury car rental kolkata, corporate car rental, chauffeur-driven cars kolkata, premium cab service kolkata, long-term car rental kolkata, SS Car Rentals' });
   }
 
   faqs = [
     {
-      question: 'What types of vehicles are available for rent?',
-      answer: 'We offer a diverse fleet including hatchbacks for city driving, sedans for business trips, SUVs for family vacations, and luxury cars for special occasions.',
+      question: 'What types of vehicles do you offer at SS Car Rentals?',
+      answer: 'We offer a wide range of chauffeur-driven vehicles, including hatchbacks, sedans, SUVs, Toyota Innova Crysta, Tempo Travellers, and luxury cars such as Audi and Mercedes, to meet all your travel needs for the best car rental experience in Kolkata.',
       isOpen: true
     },
     {
-      question: 'Are there any mileage limits on my rental?',
-      answer: 'Our rentals come with transparent mileage policies. We offer unlimited kilometers on select packages, while others have a generous daily limit. Please check your specific package details during booking.',
+      question: 'Do you provide local and outstation cab services in Kolkata?',
+      answer: 'Yes, we provide comprehensive premium cab services in Kolkata, including local city travel, outstation trips, one-way journeys, round trips, airport transfers, and tailored corporate car rentals.',
       isOpen: false
     },
     {
-      question: 'What is included in the rental price?',
-      answer: 'The rental price includes the vehicle, standard insurance, and GST. Additional charges may apply for tolls, interstate permits, and driver allowances for outstation trips.',
+      question: 'Are your drivers experienced and verified?',
+      answer: 'Yes, all our chauffeurs are professionally trained, licensed, and background-verified to ensure a safe, comfortable, and reliable travel experience for every SS Car Rental customer.',
       isOpen: false
     },
     {
-      question: 'Can I modify or cancel my booking?',
-      answer: 'Yes, you can easily modify or cancel your booking through our website or by calling our 24/7 customer support. Cancellations made 24 hours prior to pickup are usually free of charge.',
+      question: 'How are your car rental fares calculated?',
+      answer: 'Our transparent fares are based on the vehicle selected, travel distance, trip duration, and journey type. Any applicable tolls, parking fees, or state taxes will be clearly communicated at the time of booking your premium cab.',
+      isOpen: false
+    },
+    {
+      question: 'What should I do if my travel plans change?',
+      answer: 'Please contact our SS Car Rentals support team as soon as possible. Whether it is an outstation trip or an airport transfer, we will do our best to accommodate your changes flexibly.',
       isOpen: false
     }
   ];
